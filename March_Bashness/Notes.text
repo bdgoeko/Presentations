@@ -1,0 +1,54 @@
+
+Bashness....
+
+March Bashneesss
+
+
+Start with
+
+Bash...
+  more advanced shell VS. borne...
+  why learn
+    useful
+    used ALOT
+      startup scripts
+      installation scripts
+      process monitoring
+      front end to other things
+        
+  can be used lots off different places...
+      Other Unixes...
+      Pi
+      Linux
+      Scripts crafted in the correct way, can be used with other shells
+
+Why Bash
+  easy
+  quick
+  can do exactly (or very simular) to what was done CLI
+
+  Reliable
+
+  Good "glue" between other things... programs apps
+
+How Bash
+  simple #!/bin/bash
+  redirection
+
+  subprocesses
+
+Best Bash
+  exit status
+    check exit status
+    provide valid exit status
+    
+  cleanse your input!
+
+  provide good output
+
+  know what *not* to do in bash.
+    database, more difficult and cumbersome to do db work in
+
+Bash Difficulties...
+  quoting... ''
+
