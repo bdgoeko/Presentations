@@ -1,0 +1,473 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bash Tips Tricks Ignite</title>
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/sky.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+ <section>
+          Bash Tips &amp;&amp; Tricks <br>
+          <br>
+          Brian Dolan-Goecke<br>
+          <br>
+          Lighting Presentation 2016 <BR>
+          Version 0.0.14-goeko-20160810021422 <BR>
+          <BR>
+Slide 20
+        </section>
+
+ <section>
+          whomai<br>
+          Brian Dolan-Goecke <br>
+          Hacking Un*x for 30 year <br>
+          Started in AT &amp; T SYS VR3 <BR>
+          DevOps Engineer @ Reach Local <br>
+          <BR>
+Slide 19
+        </section>
+
+ <section>
+          Single space separate output <BR>
+          echo `blah command` | cut -d\  -f5 <BR>
+          <BR>
+          Example:
+          <pre><code>
+ prompt$ uptime
+ 00:26:39 up 23:53,  8 users,  load average: 0.40, 0.38, 0.64
+ prompt$ echo `uptime` | cut -d\  -f4
+ 8
+          </code></pre><br>
+          <br>
+Slide 18
+        </section>
+
+ <section>
+          Wait a little while for input <BR>
+          read -t 5 ANYTHING <BR>
+          <BR>
+          Example:
+          <pre><code>
+ while true
+ do
+   clear
+   uptime
+   ifconfig
+   read -t 5 ANYTHING
+   if test "${ANYTHING}"x = "q"x ; then exit ; fi
+ done
+          </code></pre><br>
+          <br>
+Slide 17
+        </section>
+
+ <section>
+
+          And do this <BR>
+          &amp;&amp; <BR>
+          Or this <BR>
+          ||<BR>
+          <BR>
+          Example:
+          <pre><code>
+ test 0${VAR} -le 1 &amp;&amp;
+ date &amp;&amp;
+ echo "running commands" &amp;&amp;
+ let VAR++
+          </code></pre><br>
+          <br>
+Slide 16
+        <aside class="notes">
+          and
+        <aside>
+        </section>
+
+        <section>
+          Output special magic stuff <BR>
+          echo -e <BR>
+          <BR>
+          Example:
+          <pre><code>
+echo -e
+  \a - bell
+  \c - stay on current line
+  \n - line return
+  \xxx - octal code (see man ascii)
+
+echo -n -e "\033&#93;0;This is the Title of the window now\007"
+echo -e "\aHow you like them apples\a\a\a!"
+          </code></pre><br>
+          <br>
+Slide 15
+          <aside class="notes">
+            Not sure why -e isn't the default ? Used to be ?
+            Okay setting the title didn't work on my xterm, but works for my Mac Terminals ? 
+          </aside>
+        </section>
+
+ <section>
+          Varible expansion <BR>
+          ${} <BR>
+          <BR>
+          Example:
+          <pre><code>
+ DATEM=`date +%Y%m%d%H%M%z`
+ FILE=TheFile
+ NEW_FILENAME="${FILE}NAMED_ON_${DATEM}.log"
+ Vs 
+ NEW_FILENAME="$FILENAMED_ON_$DATEM.log" # Which will not work.
+          </code></pre><br>
+          <br>
+Slide 14
+          <aside class="notes">
+            I love my curley brackets!!
+          </aside>
+        </section>
+
+ <section>
+              Variable mangling <BR>
+              ${VAR#*.} short beginning <BR>
+              ${VAR##*.} long beginning <BR>
+              ${VAR%.*} short end <BR>
+              ${VAR%%.*} long end <BR>
+              ${VAR:start:lenght } cut characters out <BR>
+          <BR>
+          Example:
+          <pre><code>
+ VAR="filename.and.extension"
+ echo "VAR# ${VAR#*.}"
+ echo "VAR## ${VAR##*.}"
+ echo "VAR% ${VAR%.*}"
+ echo "VAR%% ${VAR%%.*}"
+ NAME=`echo ${VAR} | cut -d. -f1`
+ echo "VAR%% ${VAR##${NAME}.}"
+ echo "VAR: ${VAR:9:3}"
+          </code></pre><br>
+          <br>
+          <aside class="notes">
+	    I have a good link for this, I just need to dig it up...
+            Here it is
+            http://wiki.bash-hackers.org/syntax/pe
+            Hey look, I found it!
+            http://wiki.bash-hackers.org/syntax/pe#substring_removal
+          </aside>
+Slide 13
+        </section>
+
+<section>
+          Trap signal handling<BR>
+          trap "commands to run" signals to trap <BR>
+          <BR>
+          Example:
+          <pre><code>
+ trap "rm -f ${PASMGR_PIPE}" EXIT
+          </code></pre><br>
+          <br>
+Slide 12
+          <aside class="notes">
+            Please clean up after yourself, just like your mother taught you!
+          </aside>
+        </section>
+
+<section>
+          Demisonial Arrays (more like hashes) <BR>
+              ${VAR[demsional]} <BR>
+	      ${VAR[${FAKE}${MULTIDEM}]} <BR>
+          <BR>
+          Example:
+          <pre><code>
+ ${VAR[abc]}="whatever"
+ echo "${VAR[abc]} u want"
+          </code></pre><br>
+          <aside class="notes">
+            http://wiki.bash-hackers.org/syntax/arrays
+	    Hummm.. Doesn't like it if start with a number.. has a base error..
+          </aside>
+          <br>
+Slide 11
+        </section>
+
+<section>
+          Sub command execution <BR>
+              $( ) <BR>
+          <BR>
+          Example:
+          <pre><code>
+ $( echo "Does this work" ; date &#41;
+differs from
+( echo "kinda if"; exit 1 ) || echo "But not really!"
+          </code></pre><br>
+          <br>
+Slide 10
+          <aside class="notes">
+           the $() will create a sub shell, execute the command and output...
+          </aside>
+        </section>
+
+<section>
+          Setting Variables <BR>
+          let <BR>
+          <BR>
+          Example:
+          <pre><code>
+let A++
+          </code></pre><br>
+          <br>
+Slide 9
+          <aside class="notes">
+            About time something better than expr !!
+            And there are a lot of math operations!
+          </aside>
+        </section>
+
+<section>
+          IO Redirection <BR>
+          > >> >& x>  <BR>
+          <BR> 
+          Example:
+          <pre><code>
+ping -c 1 anode.com > /dev/null 2>&1 ; PINGSTATUS=$?
+tar -cvf ~/A_Tar_File.tar 2> ~/tar_errors.text > bacuped_files.log
+          </code></pre><br>
+          <br>
+Slide 8
+          <aside class="notes">
+            You can make your own file descriptors also.
+            and send it all to /dev/null!
+            sudo ln -s /dev/null /dev/hell
+            echo "You can goto...." > /dev/hell
+          </aside>
+        </section>
+
+ <section>
+          Avoid Variable not set error <BR>
+          test x"${VAR}" = x"y" <BR>
+          <BR>
+          Example:
+          <pre><code>
+$ if test x${VAR} = xyes; then echo "one"; else echo "two"; fi
+two
+$ if test ${VAR} = yes; then echo "one"; fi
+bash: test: =: unary operator expected
+^^ avoid that ^^
+          </code></pre><br>
+          <br>
+Slide 7
+          <aside class="notes">
+            To ensure it doesn't error of there is no value for ${VAR}
+            You will see this in all kinds of pre-packaged scripts...
+          </aside>
+        </section>
+
+ <section>
+             Command Line Editing <BR>
+          <BR>
+          Example:
+          <pre><code>
+ Emacs Flavor ( set -o emacs )
+   ^a - beginning of line
+   ^e - end of line
+   ^f - forward a character
+   ^b - backward a character
+ Vi Flavor ( set -o vi )
+   0 - beginning of line
+   $ - end of line
+   i - insert
+   x - delete character
+          </code></pre><br>
+          <br>
+Slide 6
+          <aside class="notes">
+          Of course vi mode users remember to go into command mode with the escape key
+          </aside>
+        </section>
+
+ <section>
+          Command History <br>
+          <br>
+          Example:
+          <pre><code>
+Emacs Flavor ( set -o emacs )
+  ^p - previous Command
+  ^n - next command
+  ^r - search backwards
+Vi Flavor ( set -o vi )
+  j - previous command
+  k - next command
+           
+ and the 'history' command, of course...
+          </code></pre><br>
+          <br>
+Slide 5
+          <aside class="notes">
+          Of course vi mode users remember to go into command mode with the escape key
+          </aside>
+        </section>
+
+ <section>
+          Directory shortcuts  <BR>
+          cd - and cd ~ <BR>
+          <BR>
+          Example:
+          <pre><code>
+              - Last Directory
+              ~ home directory
+	  cd
+	  # Dang just lost the directory I was working in.... but wait
+	  cd -
+	  # Back to where I was !
+          cd ~/where/the/files/are/from/my/home/direcotry
+	  ( also pushd and popd can be useful )
+          </code></pre><br>
+          <br>
+Slide 4
+          <aside class="notes">
+            Best thing since sliced bread!
+          </aside>
+        </section>
+
+<section>
+              A Whole bunch of command line commands. <BR>
+                wc -l <BR>
+                tr <BR>
+                tee <BR>
+                script <BR>
+              See my next lighting talk... <BR>
+              <A Href="http://www.goecke-dolan.com/Brian/Projects/Presentations/Command_Lighting/reveal.js/"> Command Lighting! </A>
+          <BR>
+          Example:
+          <pre><code>
+              FILE_CNT=`ls -1 *files* | wc -l`
+          </code></pre><br>
+          <br>
+Slide 3
+          <aside class="notes">
+            Used to have to use expr (or something perverse) for all shell math.
+            Okay not strictly a shell, but very useful.
+          </aside>
+        </section>
+
+<section>
+          case ${VAR} in  <BR>
+          for VAR in  <BR>
+          while true <BR>
+          Example:
+          <pre><code>
+case ${VAR} in 
+  blah|BLAH|[bB][Ll][aA][Hh])
+    echo "HaHaHa"
+  ;;
+  *)
+    echo "HoHoHO"
+  ;;
+esac
+
+for VAR in one two three
+do
+  echo $VAR
+  echo ${BAR[${VAR}]}
+done
+
+while test 1 -eq 1
+do
+  echo "Going to do this FOREVER"
+  echo "And you can't stop me..."
+done
+
+          </code></pre><br>
+          <aside class="notes">
+            Big fan of case... use it quite a bit.. may just be for the esac!
+          </aside>
+          <br>
+Slide 2
+          <aside class="notes">
+          </aside>
+        </section>
+
+<section>
+          Get help with bash built-in <BR>
+          help command <BR>
+          <BR>
+          Example:
+          <pre><code>
+help variables
+          </code></pre><br>
+          <aside class="notes">
+            Thanks to ... who I believe suggested this.
+            I didn't know until then that it was for bash built-ins!
+            because you really don't want to dig through the man page, it is WAYYY too long.
+          </aside>
+          <br>
+Slide 1
+          <aside class="notes">
+          </aside>
+        </section>
+
+<section>
+          Thanks! <BR>
+          You can contact me here, now.<BR>
+
+          <br>
+Slide 0
+          <aside class="notes">
+            Think that sums it up!
+          </aside>
+        </section>
+
+<section>
+          Additional Resources<BR>
+http://mywiki.wooledge.org/EnglishFrontPage <br>
+http://www.ascii.cl/htmlcodes.htm<br>
+http://wiki.bash-hackers.org<BR>
+http://guide.bash.academy<BR>
+http://wiki.bash-hackers.org/syntax/pe<BR>
+          <br>
+Slide 0
+          <aside class="notes">
+            Think that sums it up!
+          </aside>
+        </section>
+
+        <section>
+	  Always exit with status!
+          <br>
+exit 0
+          <aside class="notes">
+	    Good Bye.
+          </aside>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      history: true,
+      // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+      { src: 'plugin/markdown/marked.js' },
+      { src: 'plugin/markdown/markdown.js' },
+      { src: 'plugin/notes/notes.js', async: true },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+      ]
+      });
+    </script>
+  </body>
+</html>

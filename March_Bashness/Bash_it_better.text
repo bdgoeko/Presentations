@@ -1,0 +1,97 @@
+Bash it Better
+
+Why Bash ?
+  Shell scripting used on all (most ? ) Linux systems
+  Can help you quickly get tasks done,
+  and quickly automate tasks
+
+Good Bash ?
+  USED for year
+  KNOW because it has been used for years.
+
+Ugly Bash ...
+  Quoting/escaping...
+
+
+Make Your Scripts Better
+  Check the return status of your important commands.
+
+  Give good return status
+    if you don't set status it will return the status of last command
+    use a return status of above 128... 0-128 used by system
+
+  Comment, # is not a dirty word
+
+  May have to look at output for error info
+    not all scripts/programs return a valid status
+
+
+SCIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+---
+
+
+
+
+Bash it Right!
+Pound Bang Bash!
+#!bash
+#!bash #
+
+BashItBetter!
+
+OutLine
+  Me.
+  History of shell/bash...
+
+  Why bash ?
+   important
+   glue between LOTs of stuff
+   make you work more effecient/quicker
+
+  Getting started
+
+  Writing good bash
+
+  Ugly bash...
+    escaping...
+
+
+
+
+I AM going to propose “Bash Better” , writing bash scripts betterr...
+
+How to write better bash script ?
+Writing better scripts ?
+Bash'n better ?
+
+
+Notes:
+
+Std error not always used...
+Check the error
+0 === Good!
+
+
+Get slides from John ?
+
+Tools:
+   cut
+   script
+   xargs
+   sed
+   awk
+
+Use {}'s
+Check your commands output
+
+
+Interesting bash training
+http://guide.bash.academy/02.commands.html
+
+Bash json tool ?
+
+ADD THE checks.  This is code, treat it as code.  Things can and will go wrong, so handle....
+
+http://mywiki.wooledge.org/EnglishFrontPage
+

@@ -1,0 +1,32 @@
+
+/var/www/goecke-dolan.com/brian/Presentations/Bash_Lighting/reveal.js
+
+scp bash-lighting.html goekol@websvr:/var/www/goecke-dolan.com/brian/Presentations/Bash_Lighting/reveal.js/index.html
+
+
+!!4
+
+arguments from command history
+
+ingight .....
+
+$ arugments
+
+add command line editing...
+
+Add command line history
+
+
+Arrays...
+http://wiki.bash-hackers.org/syntax/arrays
+
+
+http://guide.bash.academy/02.commands.html
+
+
+Add 'type' command.
+
+
+Bash Traps
+http://redsymbol.net/articles/bash-exit-traps/
+
