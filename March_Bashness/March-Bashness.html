@@ -50,9 +50,11 @@
 	<section>
 	  Why Learn ? Bash<BR>
 	  <LI>Used *ALOT* ! Every Linux system has bash. (or some sort of shell)<BR>
-	  <LI>Startup Scripts<BR>
-	  <LI> Installitaion Scripts<BR>
-	  <LI> Process/System Monitoring<BR>
+	  <LI>Used Startup Scripts<BR>
+	  <LI>used Installitaion Scripts<BR>
+	  <LI>Used Process/System Monitoring<BR>
+	  <LI>Used for CI <BR>
+	  <LI> and....<BR>
 	</section>
  
 	<section>
@@ -71,16 +73,22 @@
 	</section>
 
 	<section>
-	  <BR>
-	  <pre><code>
-	  </code></pre><br>
-	  <br>
+	  What Bash doesn't work for.... <BR>
+	  Although I love working with Bash, it doesn't hammer all nails!<BR>
+	  It does not work well for work in databases<BR>
+	  It does not work well for heavy computing tasks (or course)<BR>
+	  It does not work well for computaive tasks...<BR>
 	  <aside class="notes">
 	  </aside>
 	</section>
 
 	<section>
-          <BR>
+          I love bash because<BR>
+	  <LI> Quick to get going, can get something working in short time<BR>
+	  <LI> Able to take what I was doing on CLI and put it in a script<BR>
+	  <LI> A LOT to do with, basically any CLI and be used in a script!<BR>
+	  <LI> Reliable!<BR>
+	  <LI> Great GLUE between this and that...<BR>
           <pre><code>
           </code></pre><br>
           <br>
@@ -90,7 +98,90 @@
         </section>
 
 	<section>
+	  CLI Bash<BR>
           <BR>
+          <pre><code>
+	      Show how to build a CLI...
+          </code></pre><br>
+          <br>
+          <aside class="notes">
+          </aside>
+        </section>
+
+	<section>
+	  Simple Script!<BR>
+          <BR>
+          <pre><code>
+	      #!/bin/bash
+	      
+	      # This is a simple example script.
+
+	      echo "Hello You!"
+
+	      exit 0
+          </code></pre><br>
+          <br>
+          <aside class="notes">
+          </aside>
+        </section>
+
+	<section>
+          Another simple script with input<BR>
+          <pre><code>
+	      #!/bin/bash
+	      
+	      #Another simple script
+
+	      echo "Hello."
+	      echo "The NSA would like to know your name. "
+	      echo "Would you please tell me ?"
+	      read ANAME
+
+	      echo "Thank you ${ANME}"
+	      exit 0
+          </code></pre><br>
+          <aside class="notes">
+          </aside>
+          <br>
+        </section>
+
+	<section>
+          Programming is the process of doing a little processing...<BR>
+	  And doing A LOT of input checking!<BR>
+          <pre><code>
+	      #!/bin/bash
+	      
+	      #Another simple script
+
+	      echo "Hello."
+	      echo "The NSA would like to know your name. "
+
+	      while test -z "${ANAME}"
+	      do
+	        echo "Would you please tell me ?"
+	        read ANAME
+	      done
+
+	      echo "Thank you ${ANME}"
+	      exit 0
+          </code></pre><br>
+          <br>
+          <aside class="notes">
+          </aside>
+        </section>
+
+	<section>
+          Redirection! <BR>
+	  stdout<BR>
+	  stderr<BR>
+	  whatever<BR>
+	  stdin is the default input (keyboard)<BR>
+	  Stdout is where the standard output will go (terminal)<BR>
+	  Stderr is where the output for the errors (terminal)<BR>
+          You can have other input/output streams...<BR>
+	  Both of these streams seem to look the same on the screen<BR>
+	  Someother things use stderr to send messages/prompts.<BR>
+	  < << > 2> >> 2>> <BR>
           <pre><code>
           </code></pre><br>
           <br>
@@ -99,48 +190,15 @@
         </section>
 
 	<section>
-          <BR>
+          Pipes!<BR> 
+	  Another form for redirection<BR>
+	  Sends output from one process to the input of another process<BR>
           <pre><code>
           </code></pre><br>
           <br>
           <aside class="notes">
-          </aside>
-        </section>
-
-	<section>
-          <BR>
-
-          <pre><code>
-          </code></pre><br>
-          <aside class="notes">
-          </aside>
-          <br>
-        </section>
-
-	<section>
-          <BR>
-          <pre><code>
-          </code></pre><br>
-          <br>
-          <aside class="notes">
-          </aside>
-        </section>
-
-	<section>
-          <BR>
-          <pre><code>
-          </code></pre><br>
-          <br>
-          <aside class="notes">
-          </aside>
-        </section>
-
-<section>
-          <BR> 
-          <pre><code>
-          </code></pre><br>
-          <br>
-          <aside class="notes">
+	    Can you send just stderr to another process ? <BR>
+	    hummm.... <BR>
           </aside>
         </section>
 
