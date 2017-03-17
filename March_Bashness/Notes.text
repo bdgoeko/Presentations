@@ -31,14 +31,27 @@ Why Bash
 
   Good "glue" between other things... programs apps
 
-How Bash
-  simple #!/bin/bash
-  redirection
+CLI Bash
+  Simple Run
+  Exit status
 
+Examples
+  simple #!/bin/bash
+    Hello World
+  simple bash get input
+    Hello ${FRED} your World.
+  
+Redirection
+
+Cutting && reformating
+  Hellow ${FRED} X is running on your system
+
+What do I do with subprocesses ? 
   subprocesses
 
 Best Bash
   exit status
+    what are exit status and 
     check exit status
     provide valid exit status
     
