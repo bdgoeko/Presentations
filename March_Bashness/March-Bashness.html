@@ -32,7 +32,7 @@
         </section>
 
 	<section>
-	  whomai<br>
+	  whoami<br>
 	  Brian Dolan-Goecke <br>
 	  Hacking Un*x for 30 year <br>
 	  Started in AT &amp; T SYS VR3 <BR>
@@ -89,8 +89,6 @@
 	  <LI> A LOT to do with, basically any CLI and be used in a script!<BR>
 	  <LI> Reliable!<BR>
 	  <LI> Great GLUE between this and that...<BR>
-          <pre><code>
-          </code></pre><br>
           <br>
           <aside class="notes">
             I love my curley brackets!!
@@ -122,6 +120,8 @@
           </code></pre><br>
           <br>
           <aside class="notes">
+            '#!/bin/bash' is special Un*x magic! This will cause the system to execute "/bin/bash" when the script is marked executable and run.<BR>
+            '#' is a comment, when a bare # appears on a line anything after it will be ignored! <BR>             
           </aside>
         </section>
 
@@ -137,12 +137,11 @@
 	      echo "Would you please tell me ?"
 	      read ANAME
 
-	      echo "Thank you ${ANME}"
+	      echo "Thank you ${ANAME}"
 	      exit 0
           </code></pre><br>
           <aside class="notes">
           </aside>
-          <br>
         </section>
 
 	<section>
@@ -162,10 +161,9 @@
 	        read ANAME
 	      done
 
-	      echo "Thank you ${ANME}"
+	      echo "Thank you ${ANAME}"
 	      exit 0
           </code></pre><br>
-          <br>
           <aside class="notes">
           </aside>
         </section>
@@ -182,7 +180,14 @@
 	  Both of these streams seem to look the same on the screen<BR>
 	  Someother things use stderr to send messages/prompts.<BR>
 	  < << > 2> >> 2>> <BR>
+          <aside class="notes">
+          </aside>
+        </section>
+
+	<section>
+          Redirection Example:<BR>
           <pre><code>
+              cat something > intothisscript.sh > outtothisfile.text
           </code></pre><br>
           <br>
           <aside class="notes">
