@@ -49,7 +49,8 @@
 
 	<section>
 	  Why Learn ? Bash<BR>
-	  <LI>Used *ALOT* ! Every Linux system has bash. (or some sort of shell)<BR>
+	  <LI>Used *ALOT* ! Every Linux system has bash. <BR>
+          (or some sort of shell)<BR>
 	  <LI>Used Startup Scripts<BR>
 	  <LI>used Installitaion Scripts<BR>
 	  <LI>Used Process/System Monitoring<BR>
@@ -110,13 +111,13 @@
 	  Simple Script!<BR>
           <BR>
           <pre><code>
-	      #!/bin/bash
-	      
-	      # This is a simple example script.
+#!/bin/bash
 
-	      echo "Hello You!"
+# This is a simple example script.
 
-	      exit 0
+echo "Hello You!"
+
+exit 0
           </code></pre><br>
           <br>
           <aside class="notes">
@@ -128,17 +129,17 @@
 	<section>
           Another simple script with input<BR>
           <pre><code>
-	      #!/bin/bash
-	      
-	      #Another simple script
+#!/bin/bash
 
-	      echo "Hello."
-	      echo "The NSA would like to know your name. "
-	      echo "Would you please tell me ?"
-	      read ANAME
+#Another simple script
 
-	      echo "Thank you ${ANAME}"
-	      exit 0
+echo "Hello."
+echo "The NSA would like to know your name. "
+echo "Would you please tell me ?"
+read ANAME
+
+echo "Thank you ${ANAME}"
+exit 0
           </code></pre><br>
           <aside class="notes">
           </aside>
@@ -148,21 +149,21 @@
           Programming is the process of doing a little processing...<BR>
 	  And doing A LOT of input checking!<BR>
           <pre><code>
-	      #!/bin/bash
-	      
-	      #Another simple script
+#!/bin/bash
 
-	      echo "Hello."
-	      echo "The NSA would like to know your name. "
+#Another simple script
 
-	      while test -z "${ANAME}"
-	      do
-	        echo "Would you please tell me ?"
-	        read ANAME
-	      done
+echo "Hello."
+echo "The NSA would like to know your name. "
 
-	      echo "Thank you ${ANAME}"
-	      exit 0
+while test -z "${ANAME}"
+do
+  echo "Would you please tell me ?"
+  read ANAME
+done
+
+echo "Thank you ${ANAME}"
+exit 0
           </code></pre><br>
           <aside class="notes">
           </aside>
@@ -170,9 +171,7 @@
 
 	<section>
           Redirection! <BR>
-	  stdout<BR>
-	  stderr<BR>
-	  whatever<BR>
+	  stdout, stderr or whatever<BR>
 	  stdin is the default input (keyboard)<BR>
 	  Stdout is where the standard output will go (terminal)<BR>
 	  Stderr is where the output for the errors (terminal)<BR>
@@ -187,7 +186,7 @@
 	<section>
           Redirection Example:<BR>
           <pre><code>
-              cat something > intothisscript.sh > outtothisfile.text
+cat something > intothisscript.sh > outtothisfile.text
           </code></pre><br>
           <br>
           <aside class="notes">
@@ -275,9 +274,9 @@
 <section>
           Thanks! <BR>
           You can contact me here, now.<BR>
-
+          <BR>
+          Basher@Goecke-Dolan.com<BR>
           <br>
-Slide 0
           <aside class="notes">
             Think that sums it up!
           </aside>
@@ -286,8 +285,6 @@ Slide 0
 <section>
           Additional Resources<BR>
 
-          <br>
-Slide 0
           <aside class="notes">
             Think that sums it up! <BR>
 	    <BR>
