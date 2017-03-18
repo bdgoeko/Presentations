@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Bash Tips Tricks Ignite</title>
+    <title>March Bashness</title>
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/sky.css">
     <!-- Theme used for syntax highlighting of code -->
@@ -46,11 +46,11 @@
 	  <BR>	  
 	  Not as old as me, I think.<BR>
 	  Still being maintained, updated, and extened!<BR>
-	  example '=~'<BR>
+	  example '~='<BR>
 	</section>
 
 	<section>
-	  Why Learn ? Bash ?<BR>
+	  Why Learn ? shell scripting ?<BR>
 	</section>
 
 	<section>
@@ -72,7 +72,7 @@
 	</section>
 
 	<section>
-	  Why Use Bash ?<BR>
+	  Why Bash ?<BR>
 	  <BR>
 	  <aside class="notes">
 	  </aside>
@@ -96,6 +96,7 @@
 	  <LI> Reliable!<BR>
 	  <LI> Great GLUE between this and that...<BR>
 	    Systems super glue!<BR>
+	  <LI> Easy to experment and try<BR>
           <br>
           <aside class="notes">
             I love my curley brackets!!
@@ -107,25 +108,66 @@
 	  Although I love working with Bash,<BR>
 	  it doesn't hammer all nails!<BR>
 	  <LI>It does not work well for work in databases<BR>
-	  <LI>It does not work well for heavy computing tasks (or course)<BR>
+	  <LI>It does not work well for heavy computing tasks<BR>
+	    (of course)<BR>
+	  <LI>Math is not shell's strong point.<BR>
 	  <aside class="notes">
+	    Off the top of my head I don't think there is an easy way to do floating point.<BR>
+	    Other than "Just DO NOT do that!"<BR>
 	  </aside>
 	</section>
 
 	<section>
 	  CLI Bash<BR>
           <BR>
+	  Starting with the CLI, I often use the CLI to work out what I want to do in a script<BR>
+	  <BR>
+	  Use ';' to put several commands on the same line.<BR>
+	  while has a ittle different format<BR>
           <pre><code>
-	      Show how to build a CLI...
+while true; do clear; uptime; ls -lrt; read -t 10 ANS ;done
           </code></pre><br>
-          <br>
           <aside class="notes">
+	    Often work in the CLI to build up what I want.<BR>
           </aside>
         </section>
 
 	<section>
+	  CLI processes pid finder<BR>
+          <BR>
+          <pre><code>
+ps -eaf | grep xterm | grep -v grep | while read OWN PID STUFF; do echo $PID; done
+          </code></pre><br>
+          <aside class="notes">
+          </aside>
+        </section>
+
+        <section>
+	  CLI log colorize.<BR>
+	  <BR>
+	  <pre><code>
+tail -f mail.log | awk '
+/reachlocal/ {print "\033[33m" $0 "\033[39m" }
+/reject/ {print "\033[31m" $0 "\033[39m" }
+/convertcontacts/ {print "\033[32m" $0 "\033[39m"} // {print $0 }
+'
+	  </code></pre><BR>
+	  <aside class="notes">
+	    I sometimes run a 'tail -f' and put it in the background so I can still work on the terminal or I can do a 'date' to add to the log output.<BR>
+	</section>
+
+	<section>
+	  Moving it to a file!<BR>
+	  Once you have a few commands you are going to use you can put them into a file.<BR>
+	  You will also want to make the file executable with chmod +x [FILENAME]<BR>
+	</section>
+	
+	<section>
 	  Simple Script!<BR>
           <BR>
+	  put the folling code into a file example1.sh<BR>
+	  And then be sure to make it executable with chmnod<BR>
+	  and run the script with ./example1.sh<BR>
           <pre><code>
 #!/bin/bash
 
@@ -190,23 +232,34 @@ exit 0
 	  <LI>Stdout is where the standard output will go (terminal)<BR>
 	  <LI>Stderr is where the output for the errors (terminal)<BR>
 	  < << > 2> >> 2>> <BR>
-          <aside class="notes">
-          </aside>
-        </section>
-	  
-	<section>
-          <LI>You can have other input/output streams...<BR>
-	  <LI>Both of the output streams seem to look the same on the screen<BR>
-	  Need Example<BR>
-	  Someother things use stderr to send messages/prompts.<BR>
+	  <pre><code>
+
+          </code></pre><br>
           <aside class="notes">
           </aside>
         </section>
 
 	<section>
-          Redirection Example:<BR>
+          <LI>You can have other input/output streams...<BR>
+	  <LI>Both of the output streams goto the screen <BR>
+	  hard to tell apart.<BR>
+	  (Some programs use stderr to send messages/prompts)<BR>
           <pre><code>
-cat something > intothisscript.sh > outtothisfile.text
+ssh 10.1.1.67 "ps -eaf" > atemp.log
+          </code></pre><br>
+          <aside class="notes">
+	    Great example, where did the output go ? <BR>
+	    But it didn't go ?<BR>
+	    So ... stdout went to the file (via the '>')<BR>
+	    but the stderr goes to the screen...<BR>
+          </aside>
+        </section>
+
+	<section>
+          Another Example<BR>
+	  Send stdout and stderr to log file<BR>
+          <pre><code>
+tar -cvf A_Backup_File.tar.gz 2>&1 > A_Backup_File.log
           </code></pre><br>
           <br>
           <aside class="notes">
@@ -226,8 +279,10 @@ cat something > intothisscript.sh > outtothisfile.text
         </section>
 
 	<section>
-          <BR>
-
+          Cutting and reformating<BR>
+	  Often need to reformat input<BR>
+	  You can use Un*x tools<BR>
+	  <LI>cut<BR>
           <pre><code>
           </code></pre><br>
           <br>
@@ -254,44 +309,63 @@ cat something > intothisscript.sh > outtothisfile.text
         </section>
 
 	<section>
-          My example<BR>
-          <pre><code>
-          </code></pre><br>
+	  <A href="https://github.com/bdgoeko/Presentations/blob/master/March_Bashness/example_template.sh">My Example<BR>
+	  Template</A><BR>
           <br>
           <aside class="notes">
 	    Okay so I don't always practice what I preach... <BR>
-	    
+	    You can get my example template script <A href="https://github.com/bdgoeko/Presentations/blob/master/March_Bashness/example_template.sh">here</A><BR>
           </aside>
         </section>
 
 	<section>
-          <BR>
-          <pre><code>
-          </code></pre><br>
+          Practice, Practice, Practice<BR>
+	  <BR>
+	  Often write bash every day one way or another.<BR>
+          <aside class="notes">
+          </aside>
+        </section>
+
+	<section>
+	  clean exit<BR>
+	  <BR>
+	  Know what your exit code will be.<BR>
+	  In bash (Un*x Shell) 0 == Good exit<BR>
+	  and <> 0 bad...<BR>
+          <A Href="http://www.tldp.org/LDP/abs/html/exitcodes.html">Exit codes</A>
+	</section>
+
+	<section>
+	  Know your exit code<BR>
+	  <BR>
+	  You can use the exit from a command you run, or set and give your own.<BR>
+	  But give an exit code, and be sure you understand what it will be!<BR>
+	</section>
+
+	<section>
+	  Debugging Bash<BR>
+	  <BR>
+	  echo/print/output<BR>
+	  can also use logger to output to system logs<BR>
+	  set -v and '#!/bin/bash -v'<BR>
+	</section>
+
+	<section>
+          Difficulties with Bash<BR>
+	  <BR>
+	  Quoting... always have problems with qutoting<BR>
+	  Special characters<BR>
           <br>
           <aside class="notes">
           </aside>
         </section>
 
-<section>
-          <BR>
-          <pre><code>
-          </code></pre><br>
-          <br>
-          <aside class="notes">
-          </aside>
-        </section>
+	<section>
+	  Conclusions<BR>
+	  Bash Rocks!<BR>
+	</section>
 
-<section>
-          <BR>
-           <pre><code>
-          </code></pre><br>
-          <br>
-          <aside class="notes">
-          </aside>
-        </section>
-
-<section>
+	<section>
           Thanks! <BR>
           You can contact me here, now.<BR>
 	  <A href="http://sessions.minnestar.org/sessions/485"> March Bashness @Minnebar</A>
@@ -303,9 +377,14 @@ cat something > intothisscript.sh > outtothisfile.text
           </aside>
         </section>
 
-<section>
-          Additional Resources<BR>
-
+	<section>
+	  Additional Resources<BR>
+	  <BR>
+	  <A Href="http://www.goecke-dolan.com/Brian/Projects/Presentations/Bash_Lighting/reveal.js/#/"> My Bash Lighting Presentation</A><BR>
+	  <A Href="http://unix.stackexchange.com/questions/251381/bash-regular-expression-pattern-matching-spaces-within-double-brackets-test-us"> Bash ~= Regex match </A><BR>
+	  <A Href="http://bencane.com/2014/09/02/understanding-exit-codes-and-how-to-use-them-in-bash-scripts/">Exit Codes </A><BR>
+	  <A Href="https://www.packtpub.com/packt/offers/free-learning">Packt Free Book </A><BR>
+	  <A Href=""> </A><BR>
           <aside class="notes">
             Think that sums it up! <BR>
 	    <BR>
