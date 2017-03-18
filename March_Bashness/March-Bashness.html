@@ -123,7 +123,7 @@
 	  Starting with the CLI, I often use the CLI to work out what I want to do in a script<BR>
 	  <BR>
 	  Use ';' to put several commands on the same line.<BR>
-	  while has a ittle different format<BR>
+	  while has a little different format<BR>
           <pre><code>
 while true; do clear; uptime; ls -lrt; read -t 10 ANS ;done
           </code></pre><br>
@@ -231,9 +231,9 @@ exit 0
 	  <LI>Stdin is the default input (keyboard)<BR>
 	  <LI>Stdout is where the standard output will go (terminal)<BR>
 	  <LI>Stderr is where the output for the errors (terminal)<BR>
-	  < << > 2> >> 2>> <BR>
+	  > >> 2> 2>> <BR>
 	  <pre><code>
-
+ command > stdout_goes_here.test 2> stderr_out_goes_here.text
           </code></pre><br>
           <aside class="notes">
           </aside>
@@ -245,7 +245,7 @@ exit 0
 	  hard to tell apart.<BR>
 	  (Some programs use stderr to send messages/prompts)<BR>
           <pre><code>
-ssh 10.1.1.67 "ps -eaf" > atemp.log
+ssh www.goecke-dolan.com "ps -eaf" > atemp.log
           </code></pre><br>
           <aside class="notes">
 	    Great example, where did the output go ? <BR>
@@ -271,6 +271,7 @@ tar -cvf A_Backup_File.tar.gz 2>&1 > A_Backup_File.log
 	  Another form for redirection<BR>
 	  Sends output from one process to the input of another process<BR>
           <pre><code>
+ps -eaf | grep grep | cut -d\  -f1 | more
           </code></pre><br>
           <aside class="notes">
 	    Can you send only stderr to another process ? <BR>
@@ -282,10 +283,8 @@ tar -cvf A_Backup_File.tar.gz 2>&1 > A_Backup_File.log
           Cutting and reformating<BR>
 	  Often need to reformat input<BR>
 	  You can use Un*x tools<BR>
-	  <LI>cut<BR>
           <pre><code>
           </code></pre><br>
-          <br>
           <aside class="notes">
           </aside>
         </section>
