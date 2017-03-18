@@ -33,6 +33,7 @@
 
 	<section>
 	  whoami<br>
+	  <BR>
 	  Brian Dolan-Goecke <br>
 	  Hacking Un*x for 30 year <br>
 	  Started in AT &amp; T SYS VR3 <BR>
@@ -42,27 +43,31 @@
 
 	<section>
 	  Bash History..<BR>
+	  <BR>	  
 	  Not as old as me, I think.<BR>
 	  Still being maintained, updated, and extened!<BR>
 	  example '=~'<BR>
 	</section>
 
 	<section>
-	  Why Learn ? Bash<BR>
+	  Why Learn ? Bash ?<BR>
+	</section>
+
+	<section>
 	  <LI>Used *ALOT* ! Every Linux system has bash. <BR>
           (or some sort of shell)<BR>
-	  <LI>Used Startup Scripts<BR>
-	  <LI>used Installitaion Scripts<BR>
-	  <LI>Used Process/System Monitoring<BR>
+	  <LI>Used for Startup Scripts<BR>
+	  <LI>Used for Installitaion Scripts<BR>
+	  <LI>Used for Process/System Monitoring<BR>
 	  <LI>Used for CI <BR>
 	  <LI> and....<BR>
 	</section>
  
 	<section>
 	  Can be used lots of places!<BR>
-	  <LI>Other Unixes!<BR>
 	  <LI>Raspberry PI<BR>
 	  <LI>Linux<BR>
+	  <LI>Other Unixes!<BR>
 	  <LI>Windows.. I guess<BR>
 	</section>
 
@@ -74,27 +79,38 @@
 	</section>
 
 	<section>
-	  What Bash doesn't work for.... <BR>
-	  Although I love working with Bash, it doesn't hammer all nails!<BR>
-	  It does not work well for work in databases<BR>
-	  It does not work well for heavy computing tasks (or course)<BR>
-	  It does not work well for computaive tasks...<BR>
-	  <aside class="notes">
-	  </aside>
+	  <LI>Readily available !<BR>
+	  <LI>Easy to use<BR>
+	  <LI>Lots of resources<BR>
+	  <LI>At your Finger Tips!<BR>
 	</section>
 
 	<section>
           I love bash because<BR>
-	  <LI> Quick to get going, can get something working in short time<BR>
-	  <LI> Able to take what I was doing on CLI and put it in a script<BR>
-	  <LI> A LOT to do with, basically any CLI and be used in a script!<BR>
+	  <BR>
+	  <LI> Quick to get going<BR>
+	    can get something working in short time<BR>
+	  <LI> Able to take what I was doing on CLI<BR>
+	    and put it in a script<BR>
+	  <LI> Any CLI command can be used in a script!<BR>
 	  <LI> Reliable!<BR>
 	  <LI> Great GLUE between this and that...<BR>
+	    Systems super glue!<BR>
           <br>
           <aside class="notes">
             I love my curley brackets!!
           </aside>
         </section>
+
+	<section>
+	  What Bash doesn't work for.... <BR>
+	  Although I love working with Bash,<BR>
+	  it doesn't hammer all nails!<BR>
+	  <LI>It does not work well for work in databases<BR>
+	  <LI>It does not work well for heavy computing tasks (or course)<BR>
+	  <aside class="notes">
+	  </aside>
+	</section>
 
 	<section>
 	  CLI Bash<BR>
@@ -119,10 +135,9 @@ echo "Hello You!"
 
 exit 0
           </code></pre><br>
-          <br>
           <aside class="notes">
-            '#!/bin/bash' is special Un*x magic! This will cause the system to execute "/bin/bash" when the script is marked executable and run.<BR>
-            '#' is a comment, when a bare # appears on a line anything after it will be ignored! <BR>             
+'#!/bin/bash' is special Un*x magic! This will cause the system to execute "/bin/bash" when the script is marked executable and run.<BR>
+'#' is a comment, when a bare # appears on a line anything after it will be ignored! <BR>             
           </aside>
         </section>
 
@@ -170,15 +185,20 @@ exit 0
         </section>
 
 	<section>
-          Redirection! <BR>
-	  stdout, stderr or whatever<BR>
-	  stdin is the default input (keyboard)<BR>
-	  Stdout is where the standard output will go (terminal)<BR>
-	  Stderr is where the output for the errors (terminal)<BR>
-          You can have other input/output streams...<BR>
-	  Both of these streams seem to look the same on the screen<BR>
-	  Someother things use stderr to send messages/prompts.<BR>
+	  Redirection!<BR>
+	  <LI>Stdin is the default input (keyboard)<BR>
+	  <LI>Stdout is where the standard output will go (terminal)<BR>
+	  <LI>Stderr is where the output for the errors (terminal)<BR>
 	  < << > 2> >> 2>> <BR>
+          <aside class="notes">
+          </aside>
+        </section>
+	  
+	<section>
+          <LI>You can have other input/output streams...<BR>
+	  <LI>Both of the output streams seem to look the same on the screen<BR>
+	  Need Example<BR>
+	  Someother things use stderr to send messages/prompts.<BR>
           <aside class="notes">
           </aside>
         </section>
@@ -199,14 +219,13 @@ cat something > intothisscript.sh > outtothisfile.text
 	  Sends output from one process to the input of another process<BR>
           <pre><code>
           </code></pre><br>
-          <br>
           <aside class="notes">
-	    Can you send just stderr to another process ? <BR>
+	    Can you send only stderr to another process ? <BR>
 	    hummm.... <BR>
           </aside>
         </section>
 
- <section>
+	<section>
           <BR>
 
           <pre><code>
@@ -216,35 +235,36 @@ cat something > intothisscript.sh > outtothisfile.text
           </aside>
         </section>
 
- <section>
-          <BR>
-          Example:
-          <pre><code>
-          </code></pre><br>
-          <br>
+	<section>
+	  Better Bashing!<BR>
+	  <BR>
           <aside class="notes">
           </aside>
         </section>
 
- <section>
+	<section>
+          Lots of bash scripts are written<br>
+	  in the heat of the moment!<BR>
+	  Be prepared!<BR>
           <br>
-          <pre><code>
-          </code></pre><br>
-          <br>
+	  <LI>Practice, write A LOT of scripts!<BR>
+	  <LI>Plan, have a template to start with<BR>
           <aside class="notes">
           </aside>
         </section>
 
- <section>
-          <BR>
+	<section>
+          My example<BR>
           <pre><code>
           </code></pre><br>
           <br>
           <aside class="notes">
+	    Okay so I don't always practice what I preach... <BR>
+	    
           </aside>
         </section>
 
-<section>
+	<section>
           <BR>
           <pre><code>
           </code></pre><br>
@@ -274,6 +294,7 @@ cat something > intothisscript.sh > outtothisfile.text
 <section>
           Thanks! <BR>
           You can contact me here, now.<BR>
+	  <A href="http://sessions.minnestar.org/sessions/485"> March Bashness @Minnebar</A>
           <BR>
           Basher@Goecke-Dolan.com<BR>
           <br>
