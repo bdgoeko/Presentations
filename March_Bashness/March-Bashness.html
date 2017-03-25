@@ -120,6 +120,7 @@
 	  <LI>It does not work well for heavy computing tasks<BR>
 	    (of course)<BR>
 	  <LI>Math is not shell's strong point.<BR>
+	  <LI> Hard to intergrate several systems and string output/input together<LI>
 	  <aside class="notes">
 	    Off the top of my head I don't think there is an easy way to do floating point.<BR>
 	    Other than "Just DO NOT do that!"<BR>
@@ -371,8 +372,13 @@ ps -eaf | grep grep | cut -d\  -f1 | more
 	  echo/print/output<BR>
 	  can also use logger to output to system logs<BR>
 	  set -v and '#!/bin/bash -v'<BR>
+	  <aside class="notes">
+	    You can define a variable with the number of the file handle of where the debug output should go.<BR>
+	    Then of course you can redirect that file handle to a file.<BR>
+	    BASH_X=9; script2run.sh 9> ~/script2run_debug.log <BR>
+	    </aside>
 	</section>
-
+	
 	<section>
           Difficulties with Bash<BR>
 	  <BR>
@@ -383,6 +389,13 @@ ps -eaf | grep grep | cut -d\  -f1 | more
           </aside>
         </section>
 
+	<section>
+	  MUST RUN PEFECT!<BR>
+	  <BR>
+	  You can do a 'set -e' which will enable a mode that every command MUST execute successfully, or the script will exit.<BR>
+	  Usually the shell does not check or require every command to be successful, it leave that upto you !<BR>
+	</section>
+	
 	<section>
 	  Conclusions<BR>
 	  Bash Rocks!<BR>
