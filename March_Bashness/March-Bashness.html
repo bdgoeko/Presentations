@@ -166,7 +166,7 @@ tail -f mail.log | awk '
 	  Simple Script!<BR>
           <BR>
 	  put the folling code into a file example1.sh<BR>
-	  And then be sure to make it executable with chmnod<BR>
+	  And then be sure to make it executable with chmod<BR>
 	  and run the script with ./example1.sh<BR>
           <pre><code>
 #!/bin/bash
@@ -199,6 +199,10 @@ echo "Thank you ${ANAME}"
 exit 0
           </code></pre><br>
           <aside class="notes">
+There are a number of predefined variables.
+A better way to call bash is the use of "env bash"
+ie the first line of your script would be 
+#!/usr/bin/env bash 
           </aside>
         </section>
 

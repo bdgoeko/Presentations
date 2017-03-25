@@ -3,8 +3,8 @@
 # Name: test_script.sh 
 # Description: An example script that does nothing.
 #
-# Copyright Brian Dolan-Goecke 2011
-# Contact Brian Dolan-Goecke @ http://www.goecke-dolan.com/Brian/sendmeail.php
+# Copyright Brian Dolan-Goecke 2011-2017
+# Contact Brian Dolan-Goecke 
 
 VERSION="0.0.4-bdg-2011"
 
