@@ -375,7 +375,8 @@ ps -eaf | grep grep | cut -d\  -f1 | more
 	  <aside class="notes">
 	    You can define a variable with the number of the file handle of where the debug output should go.<BR>
 	    Then of course you can redirect that file handle to a file.<BR>
-	    BASH_X=9; script2run.sh 9> ~/script2run_debug.log <BR>
+	    BASH_XTRACEFD=9; script2run.sh 9> ~/script2run_debug.log <BR>
+            <A Href="">Here is a StackExchange Q and A about it.</A><BR>
 	    </aside>
 	</section>
 	
