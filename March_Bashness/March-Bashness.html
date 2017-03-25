@@ -42,10 +42,19 @@
 	</section>
 
 	<section>
+	  March Bashness<BR>
+	  Getting started with Bash Programming<BR>
+	  We will cover the basics for Bash shell programming so you can start programming shell scripts.<BR>
+	  <BR>
+	  Shell and scripting language<BR>
+	</section>
+
+	<section>
 	  Bash History..<BR>
 	  <BR>	  
-	  Not as old as me, I think.<BR>
+	  Not as old as me! First release 1989<BR>
 	  Still being maintained, updated, and extened!<BR>
+	  Mostly bash is stable, has core that has been the same since 1991<BR>
 	  example '~='<BR>
 	</section>
 
@@ -57,7 +66,7 @@
 	  <LI>Used *ALOT* ! Every Linux system has bash. <BR>
           (or some sort of shell)<BR>
 	  <LI>Used for Startup Scripts<BR>
-	  <LI>Used for Installitaion Scripts<BR>
+	  <LI>Used for Installation Scripts<BR>
 	  <LI>Used for Process/System Monitoring<BR>
 	  <LI>Used for CI <BR>
 	  <LI> and....<BR>
@@ -207,6 +216,14 @@ ie the first line of your script would be
         </section>
 
 	<section>
+	  VARIABLES!<BR>
+	  <LI>Bash has variables
+	  <LI>There are local and global
+	  <LI>There are several variables that are pre-defined
+	  <LI>There are variables that some programs use, if defined!
+	</section>
+	
+	<section>
           Programming is the process of doing a little processing...<BR>
 	  And doing A LOT of input checking!<BR>
           <pre><code>
@@ -235,11 +252,14 @@ exit 0
 	  <LI>Stdin is the default input (keyboard)<BR>
 	  <LI>Stdout is where the standard output will go (terminal)<BR>
 	  <LI>Stderr is where the output for the errors (terminal)<BR>
+	  <LI>File descriptiors 0 - stdin , 1 - stdout, 3 - stderr <BR>
 	  > >> 2> 2>> <BR>
 	  <pre><code>
  command > stdout_goes_here.test 2> stderr_out_goes_here.text
           </code></pre><br>
           <aside class="notes">
+	    Bash manual on redirection
+	    http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-3.html
           </aside>
         </section>
 
@@ -356,7 +376,7 @@ ps -eaf | grep grep | cut -d\  -f1 | more
 	<section>
           Difficulties with Bash<BR>
 	  <BR>
-	  Quoting... always have problems with qutoting<BR>
+	  Quoting... always have problems with quoting<BR>
 	  Special characters<BR>
           <br>
           <aside class="notes">
