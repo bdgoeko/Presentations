@@ -45,7 +45,7 @@ Slide 19
 
  <section>
           Single space separate output <BR>
-          echo `blah command` | cut -d\  -f5 <BR>
+          echo `uptime` | cut -d\  -f5 <BR>
           <BR>
           Example:
           <pre><code>
@@ -59,7 +59,7 @@ Slide 18
         </section>
 
  <section>
-          Wait a little while for input <BR>
+          Only wait a little while for input <BR>
           read -t 5 ANYTHING <BR>
           <BR>
           Example:
@@ -182,6 +182,7 @@ Slide 13
 Slide 12
           <aside class="notes">
             Please clean up after yourself, just like your mother taught you!
+            Wait I didn't get to delete my temp file yet!
           </aside>
         </section>
 
@@ -216,12 +217,13 @@ differs from
           <br>
 Slide 10
           <aside class="notes">
-           the $() will create a sub shell, execute the command and output...
+           the $() will create a sub shell, execute the command and output...<BR>
+           According to Wikipedia this is from BSD shell.<BR>
           </aside>
         </section>
 
 <section>
-          Setting Variables <BR>
+          Shell Variables Math BABY! <BR>
           let <BR>
           <BR>
           Example:
@@ -270,8 +272,9 @@ bash: test: =: unary operator expected
           <br>
 Slide 7
           <aside class="notes">
-            To ensure it doesn't error of there is no value for ${VAR}
+            To ensure it doesn't error because of there is no value for ${VAR}
             You will see this in all kinds of pre-packaged scripts...
+            You could also  test -n or -z to see if it does have a value or does not have a value...
           </aside>
         </section>
 
@@ -349,7 +352,7 @@ Slide 4
                 tee <BR>
                 script <BR>
               See my next lighting talk... <BR>
-              <A Href="http://www.goecke-dolan.com/Brian/Projects/Presentations/Command_Lighting/reveal.js/"> Command Lighting! </A>
+              <A Href="http://www.goecke-dolan.com/Brian/Projects/Presentations/CLI_Lighting/reveal.js/"> CLI Lighting! </A>
           <BR>
           Example:
           <pre><code>
@@ -418,6 +421,25 @@ Slide 1
           <aside class="notes">
           </aside>
         </section>
+
+<section>
+	Bash Networking<BR>
+	<BR>
+	Send or receive network traffic dirrectly with bash...<BR>
+	<BR>
+	Example:<BR>
+	<pre><code>
+	..... /dev/tcp/10.1.1.1/
+	</code></pre>
+          <br>
+Slide 1
+        <aside class="notes">
+          This is nuts... no that isn't a real device... <BR>
+          This is right from bash, not a device on the system... <BR>
+          Someone has done the unthinkable and created a Web Server in bash... yes...<BR>
+          I will find the link and of course add it here...<BR>
+        </aside>
+   	</section>
 
 <section>
           Thanks! <BR>
