@@ -34,9 +34,9 @@ Slide 20
         </section>
 
  <section>
-          whoami<br>
+          <code>whoami</code><br>
           Brian Dolan-Goecke <br>
-          Hacking Un*x for 30 year <br>
+          Hacking Un*x for 30 years <br>
           Started in AT &amp; T SYS VR3 <BR>
           DevOps Engineer @ ReachLocal <br>
           <BR>
@@ -45,7 +45,7 @@ Slide 19
 
  <section>
           Single space separate output <BR>
-          echo `uptime` | cut -d\  -f5 <BR>
+          <code>echo `uptime` | cut -d\  -f5</code> <BR>
           <BR>
           Example:
           <pre><code>
@@ -60,7 +60,7 @@ Slide 18
 
  <section>
           Only wait a little while for input <BR>
-          read -t 5 ANYTHING <BR>
+          <code>read -t 5 ANYTHING</code> <BR>
           <BR>
           Example:
           <pre><code>
@@ -80,9 +80,9 @@ Slide 17
  <section>
 
           And do this <BR>
-          &amp;&amp; <BR>
+          <code>&amp;&amp;</code> <BR>
           Or this <BR>
-          ||<BR>
+          <code>||</code><BR>
           <BR>
           Example:
           <pre><code>
@@ -100,38 +100,38 @@ Slide 16
 
         <section>
           Output special magic stuff <BR>
-          echo -e <BR>
+          <code>echo -e</code> <BR>
           <BR>
           Example:
           <pre><code>
-echo -e
-  \a - bell
-  \c - stay on current line
-  \n - line return
-  \xxx - octal code (see man ascii)
+ echo -e
+   \a - bell
+   \c - stay on current line
+   \n - line return
+   \xxx - octal code (see man ascii)
 
-echo -n -e "\033&#93;0;This is the Title of the window now\007"
-echo -e "\aHow you like them apples\a\a\a!"
+ echo -n -e "\033&#93;0;This is the title of the window now\007"
+ echo -e "\aHow you like them apples\a\a\a!"
           </code></pre><br>
           <br>
 Slide 15
           <aside class="notes">
-            Not sure why -e isn't the default ? Used to be ?
-            Okay setting the title didn't work on my xterm, but works for my Mac Terminals ? 
+            Not sure why <code>-e</code> isn't the default ? Used to be ?
+            Okay setting the title didn't work on my xterm, but works for my Mac Terminals ?
           </aside>
         </section>
 
  <section>
           Varible expansion <BR>
-          ${} <BR>
+          <code>${}</code> <BR>
           <BR>
           Example:
           <pre><code>
  DATEM=`date +%Y%m%d%H%M%z`
  FILE=TheFile
  NEW_FILENAME="${FILE}NAMED_ON_${DATEM}.log"
- Vs 
- NEW_FILENAME="$FILENAMED_ON_$DATEM.log" # Which will not work.
+ # Vs
+ NEW_FILENAME="$FILENAMED_ON_$DATEM.log" # Will not work.
           </code></pre><br>
           <br>
 Slide 14
@@ -142,11 +142,11 @@ Slide 14
 
  <section>
               Variable mangling <BR>
-              ${VAR#*.} short beginning <BR>
-              ${VAR##*.} long beginning <BR>
-              ${VAR%.*} short end <BR>
-              ${VAR%%.*} long end <BR>
-              ${VAR:start:lenght } cut characters out <BR>
+              <code>${VAR#*.}</code> short beginning <BR>
+              <code>${VAR##*.}</code> long beginning <BR>
+              <code>${VAR%.*}</code> short end <BR>
+              <code>${VAR%%.*}</code> long end <BR>
+              <code>${VAR:start:length}</code> cut characters out <BR>
           <BR>
           Example:
           <pre><code>
@@ -161,7 +161,7 @@ Slide 14
           </code></pre><br>
           <br>
           <aside class="notes">
-	    I have a good link for this, I just need to dig it up...
+            I have a good link for this, I just need to dig it up...
             Here it is
             http://wiki.bash-hackers.org/syntax/pe
             Hey look, I found it!
@@ -172,7 +172,7 @@ Slide 13
 
 <section>
           Trap signal handling<BR>
-          trap "commands to run" signals to trap <BR>
+          <code>trap "commands to run" signals to trap</code> <BR>
           <BR>
           Example:
           <pre><code>
@@ -187,9 +187,9 @@ Slide 12
         </section>
 
 <section>
-          Demisonial Arrays (more like hashes) <BR>
-              ${VAR[demsional]} <BR>
-	      ${VAR[${FAKE}${MULTIDEM}]} <BR>
+          Dimensional Arrays (more like hashes) <BR>
+              <code>${VAR[demsional]}</code> <BR>
+              <code>${VAR[${FAKE}${MULTIDEM}]}</code> <BR>
           <BR>
           Example:
           <pre><code>
@@ -198,7 +198,7 @@ Slide 12
           </code></pre><br>
           <aside class="notes">
             http://wiki.bash-hackers.org/syntax/arrays
-	    Hummm.. Doesn't like it if start with a number.. has a base error..
+            Hummm.. Doesn't like it if start with a number.. has a base error..
           </aside>
           <br>
 Slide 11
@@ -206,75 +206,75 @@ Slide 11
 
 <section>
           Sub command execution <BR>
-              $( ) <BR>
+              <code>$( )</code> <BR>
           <BR>
           Example:
           <pre><code>
  $( echo "Does this work" ; date &#41;
-differs from
-( echo "kinda if"; exit 1 ) || echo "But not really!"
+ # differs from
+ ( echo "kinda if"; exit 1 ) || echo "But not really!"
           </code></pre><br>
           <br>
 Slide 10
           <aside class="notes">
-           the $() will create a sub shell, execute the command and output...<BR>
+           the <code>$()</code> will create a sub shell, execute the command and output...<BR>
            According to Wikipedia this is from BSD shell.<BR>
           </aside>
         </section>
 
 <section>
           Shell Variables Math BABY! <BR>
-          let <BR>
+          <code>let</code> <BR>
           <BR>
           Example:
           <pre><code>
-let A++
+ let A++
           </code></pre><br>
           <br>
 Slide 9
           <aside class="notes">
-            About time something better than expr !!
+            About time something better than <code>expr</code> !!
             And there are a lot of math operations!
           </aside>
         </section>
 
 <section>
           IO Redirection <BR>
-          > >> >& x>  <BR>
-          <BR> 
+          <code>> >> >& x></code>  <BR>
+          <BR>
           Example:
           <pre><code>
-ping -c 1 anode.com > /dev/null 2>&1 ; PINGSTATUS=$?
-tar -cvf ~/A_Tar_File.tar 2> ~/tar_errors.text > bacuped_files.log
+ ping -c 1 anode.com > /dev/null 2>&1 ; PINGSTATUS=$?
+ tar -cvf ~/A_Tar_File.tar 2> ~/tar_errors.text > backup_files.log
           </code></pre><br>
           <br>
 Slide 8
           <aside class="notes">
             You can make your own file descriptors also.
-            and send it all to /dev/null!
-            sudo ln -s /dev/null /dev/hell
-            echo "You can goto...." > /dev/hell
+            and send it all to <code>/dev/null</code>!
+            <code>sudo ln -s /dev/null /dev/hell</code>
+            <code>echo "You can go to...." > /dev/hell</code>
           </aside>
         </section>
 
  <section>
           Avoid Variable not set error <BR>
-          test x"${VAR}" = x"y" <BR>
+          <code>test x"${VAR}" = x"y"</code> <BR>
           <BR>
           Example:
           <pre><code>
-$ if test x${VAR} = xyes; then echo "one"; else echo "two"; fi
-two
-$ if test ${VAR} = yes; then echo "one"; fi
-bash: test: =: unary operator expected
-^^ avoid that ^^
+ $ if test x${VAR} = xyes; then echo "one"; else echo "two"; fi
+ two
+ $ if test ${VAR} = yes; then echo "one"; fi
+ bash: test: =: unary operator expected
+ # ^^ avoid that ^^
           </code></pre><br>
           <br>
 Slide 7
           <aside class="notes">
-            To ensure it doesn't error because of there is no value for ${VAR}
+            To ensure it doesn't error because of there is no value for <code>${VAR}</code>
             You will see this in all kinds of pre-packaged scripts...
-            You could also  test -n or -z to see if it does have a value or does not have a value...
+            You could also <code>test -n</code> or <code>-z</code> to see if it does have a value or does not have a value...
           </aside>
         </section>
 
@@ -306,14 +306,14 @@ Slide 6
           <br>
           Example:
           <pre><code>
-Emacs Flavor ( set -o emacs )
-  ^p - previous Command
-  ^n - next command
-  ^r - search backwards
-Vi Flavor ( set -o vi )
-  j - previous command
-  k - next command
-           
+ Emacs Flavor ( set -o emacs )
+   ^p - previous Command
+   ^n - next command
+   ^r - search backwards
+ Vi Flavor ( set -o vi )
+   j - previous command
+   k - next command
+
  and the 'history' command, of course...
           </code></pre><br>
           <br>
@@ -325,18 +325,18 @@ Slide 5
 
  <section>
           Directory shortcuts  <BR>
-          cd - and cd ~ <BR>
+          <code>cd -</code> and <code>cd ~</code> <BR>
           <BR>
           Example:
           <pre><code>
-              - Last Directory
-              ~ home directory
-	  cd
-	  # Dang just lost the directory I was working in.... but wait
-	  cd -
-	  # Back to where I was !
-          cd ~/where/the/files/are/from/my/home/direcotry
-	  ( also pushd and popd can be useful )
+ # - Last directory
+ # ~ Home directory
+ cd
+ # Dang just lost the directory I was working in.... but wait
+ cd -
+ # Back to where I was !
+ cd ~/where/the/files/are/from/my/home/direcotry
+ # ( also pushd and popd can be useful )
           </code></pre><br>
           <br>
 Slide 4
@@ -347,55 +347,55 @@ Slide 4
 
 <section>
               A Whole bunch of command line commands. <BR>
-                wc -l <BR>
-                tr <BR>
-                tee <BR>
-                script <BR>
+                <code>wc -l</code> <BR>
+                <code>tr</code> <BR>
+                <code>tee</code> <BR>
+                <code>script</code> <BR>
               See my next lighting talk... <BR>
               <A Href="http://www.goecke-dolan.com/Brian/Projects/Presentations/CLI_Lighting/reveal.js/"> CLI Lighting! </A>
           <BR>
           Example:
           <pre><code>
-              FILE_CNT=`ls -1 *files* | wc -l`
+ FILE_CNT=`ls -1 *files* | wc -l`
           </code></pre><br>
           <br>
 Slide 3
           <aside class="notes">
-            Used to have to use expr (or something perverse) for all shell math.
+            Used to have to use <code>expr</code> (or something perverse) for all shell math.
             Okay not strictly a shell, but very useful.
           </aside>
         </section>
 
 <section>
-          case ${VAR} in  <BR>
-          for VAR in  <BR>
-          while true <BR>
+          <code>case ${VAR} in</code> <BR>
+          <code>for VAR in</code> <BR>
+          <code>while true</code> <BR>
           Example:
           <pre><code>
-case ${VAR} in 
-  blah|BLAH|[bB][Ll][aA][Hh])
-    echo "HaHaHa"
-  ;;
-  *)
-    echo "HoHoHO"
-  ;;
-esac
+ case ${VAR} in
+   blah|BLAH|[bB][Ll][aA][Hh])
+     echo "HaHaHa"
+   ;;
+   *)
+     echo "HoHoHO"
+   ;;
+ esac
 
-for VAR in one two three
-do
-  echo $VAR
-  echo ${BAR[${VAR}]}
-done
+ for VAR in one two three
+ do
+   echo $VAR
+   echo ${BAR[${VAR}]}
+ done
 
-while test 1 -eq 1
-do
-  echo "Going to do this FOREVER"
-  echo "And you can't stop me..."
-done
+ while test 1 -eq 1
+ do
+   echo "Going to do this FOREVER"
+   echo "And you can't stop me..."
+ done
 
           </code></pre><br>
           <aside class="notes">
-            Big fan of case... use it quite a bit.. may just be for the esac!
+            Big fan of <code>case</code>... use it quite a bit.. may just be for the <code>esac</code>!
           </aside>
           <br>
 Slide 2
@@ -404,16 +404,16 @@ Slide 2
         </section>
 
 <section>
-          Get help with bash built-in <BR>
-          help command <BR>
+          Get help with Bash built-in <BR>
+          <code>help command</code> <BR>
           <BR>
           Example:
           <pre><code>
-help variables
+ help variables
           </code></pre><br>
           <aside class="notes">
             Thanks to ... who I believe suggested this.
-            I didn't know until then that it was for bash built-ins!
+            I didn't know until then that it was for Bash built-ins!
             because you really don't want to dig through the man page, it is WAYYY too long.
           </aside>
           <br>
@@ -423,23 +423,23 @@ Slide 1
         </section>
 
 <section>
-	Bash Networking<BR>
-	<BR>
-	Send or receive network traffic dirrectly with bash...<BR>
-	<BR>
-	Example:<BR>
-	<pre><code>
-	..... /dev/tcp/10.1.1.1/
-	</code></pre>
-          <br>
+        Bash Networking<BR>
+        <BR>
+        Send or receive network traffic directly with Bash...<BR>
+        <BR>
+        Example:<BR>
+        <pre><code>
+ ..... /dev/tcp/10.1.1.1/
+        </code></pre>
+        <br>
 Slide 1
         <aside class="notes">
           This is nuts... no that isn't a real device... <BR>
-          This is right from bash, not a device on the system... <BR>
-          Someone has done the unthinkable and created a Web Server in bash... yes...<BR>
+          This is right from Bash, not a device on the system... <BR>
+          Someone has done the unthinkable and created a Web Server in Bash... yes...<BR>
           I will find the link and of course add it here...<BR>
         </aside>
-   	</section>
+      </section>
 
 <section>
           Thanks! <BR>
@@ -468,11 +468,13 @@ Slide 0
         </section>
 
         <section>
-	  Always exit with status!
+          Always exit with status!
           <br>
-exit 0
+          <pre><code>
+ exit 0
+          </code></pre>
           <aside class="notes">
-	    Good Bye.
+            Good Bye.
           </aside>
         </section>
       </div>
