@@ -21,8 +21,8 @@
     <div class="reveal">
       <div class="slides">
 
-	<section>
-	  March Bashness <br>
+        <section>
+          March Bashness <br>
           <br>
           Brian Dolan-Goecke<br>
           <br>
@@ -31,381 +31,381 @@
           <BR>
         </section>
 
-	<section>
-	  whoami<br>
-	  <BR>
-	  Brian Dolan-Goecke <br>
-	  Hacking Un*x for 30 year <br>
-	  Started in AT &amp; T SYS VR3 <BR>
-	  DevOps Engineer @ ReachLocal <BR>
-	  <BR>
-	</section>
+        <section>
+          <code>whoami</code><br>
+          <BR>
+          Brian Dolan-Goecke <br>
+          Hacking Un*x for 30 year <br>
+          Started in AT &amp; T SYS VR3 <BR>
+          DevOps Engineer @ ReachLocal <BR>
+          <BR>
+        </section>
 
-	<section>
-	  March Bashness<BR>
-	  Getting started with Bash Programming<BR>
-	  We will cover the basics for Bash shell programming so you can start programming shell scripts.<BR>
-	  <BR>
-	  Shell and scripting language<BR>
-	</section>
+        <section>
+          March Bashness<BR>
+          Getting started with Bash Programming<BR>
+          We will cover the basics for Bash shell programming so you can start programming shell scripts.<BR>
+          <BR>
+          Shell and scripting language<BR>
+        </section>
 
-	<section>
-	  Bash History..<BR>
-	  <BR>	  
-	  Not as old as me! First release 1989<BR>
-	  Still being maintained, updated, and extened!<BR>
-	  Mostly bash is stable, has core that has been the same since 1991<BR>
-	  example '~='<BR>
-	</section>
+        <section>
+          Bash History..<BR>
+          <BR>
+          Not as old as me! First release 1989<BR>
+          Still being maintained, updated, and extened!<BR>
+          Mostly Bash is stable, has core that has been the same since 1991<BR>
+          example '<code>~=</code>'<BR>
+        </section>
 
-	<section>
-	  Why Learn ? shell scripting ?<BR>
-	</section>
+        <section>
+          Why Learn ? shell scripting ?<BR>
+        </section>
 
-	<section>
-	  <LI>Used *ALOT* ! Every Linux system has bash. <BR>
+        <section>
+          <LI>Used *A LOT* ! Every Linux system has Bash. <BR>
           (or some sort of shell)<BR>
-	  <LI>Used for Startup Scripts<BR>
-	  <LI>Used for Installation Scripts<BR>
-	  <LI>Used for Process/System Monitoring<BR>
-	  <LI>Used for CI <BR>
-	  <LI> and....<BR>
-	</section>
- 
-	<section>
-	  Can be used lots of places!<BR>
-	  <LI>Raspberry PI<BR>
-	  <LI>Linux<BR>
-	  <LI>Other Unixes!<BR>
-	  <LI>Windows.. I guess<BR>
-	</section>
+          <LI>Used for Startup Scripts<BR>
+          <LI>Used for Installation Scripts<BR>
+          <LI>Used for Process/System Monitoring<BR>
+          <LI>Used for CI <BR>
+          <LI> and....<BR>
+        </section>
 
-	<section>
-	  Why Bash ?<BR>
-	  <BR>
-	  <aside class="notes">
-	  </aside>
-	</section>
+        <section>
+          Can be used lots of places!<BR>
+          <LI>Raspberry PI<BR>
+          <LI>Linux<BR>
+          <LI>Other Unixes!<BR>
+          <LI>Windows.. I guess<BR>
+        </section>
 
-	<section>
-	  <LI>Readily available !<BR>
-	  <LI>Easy to use<BR>
-	  <LI>Lots of resources<BR>
-	  <LI>At your Finger Tips!<BR>
-	</section>
+        <section>
+          Why Bash ?<BR>
+          <BR>
+          <aside class="notes">
+          </aside>
+        </section>
 
-	<section>
-          I love bash because<BR>
-	  <BR>
-	  <LI> Quick to get going<BR>
-	    can get something working in short time<BR>
-	  <LI> Able to take what I was doing on CLI<BR>
-	    and put it in a script<BR>
-	  <LI> Any CLI command can be used in a script!<BR>
-	  <LI> Reliable!<BR>
-	  <LI> Great GLUE between this and that...<BR>
-	    Systems super glue!<BR>
-	  <LI> Easy to experment and try<BR>
+        <section>
+          <LI>Readily available !<BR>
+          <LI>Easy to use<BR>
+          <LI>Lots of resources<BR>
+          <LI>At your Finger Tips!<BR>
+        </section>
+
+        <section>
+          I love Bash because<BR>
+          <BR>
+          <LI> Quick to get going<BR>
+            can get something working in short time<BR>
+          <LI> Able to take what I was doing on CLI<BR>
+            and put it in a script<BR>
+          <LI> Any CLI command can be used in a script!<BR>
+          <LI> Reliable!<BR>
+          <LI> Great GLUE between this and that...<BR>
+            Systems super glue!<BR>
+          <LI> Easy to experment and try<BR>
           <br>
           <aside class="notes">
             I love my curley brackets!!
           </aside>
         </section>
 
-	<section>
-	  What Bash doesn't work for.... <BR>
-	  Although I love working with Bash,<BR>
-	  it doesn't hammer all nails!<BR>
-	  <LI>It does not work well for work in databases<BR>
-	  <LI>It does not work well for heavy computing tasks<BR>
-	    (of course)<BR>
-	  <LI>Math is not shell's strong point.<BR>
-	  <LI> Hard to intergrate several systems and string output/input together<LI>
-	  <aside class="notes">
-	    Off the top of my head I don't think there is an easy way to do floating point.<BR>
-	    Other than "Just DO NOT do that!"<BR>
-	  </aside>
-	</section>
-
-	<section>
-	  CLI Bash<BR>
-          <BR>
-	  Starting with the CLI, I often use the CLI to work out what I want to do in a script<BR>
-	  <BR>
-	  Use ';' to put several commands on the same line.<BR>
-	  while has a little different format<BR>
-          <pre><code>
-while true; do clear; uptime; ls -lrt; read -t 10 ANS ;done
-          </code></pre><br>
+        <section>
+          What Bash doesn't work for.... <BR>
+          Although I love working with Bash,<BR>
+          it doesn't hammer all nails!<BR>
+          <LI>It does not work well for work in databases<BR>
+          <LI>It does not work well for heavy computing tasks<BR>
+            (of course)<BR>
+          <LI>Math is not shell's strong point.<BR>
+          <LI> Hard to intergrate several systems and string output/input together<LI>
           <aside class="notes">
-	    Often work in the CLI to build up what I want.<BR>
+            Off the top of my head I don't think there is an easy way to do floating point.<BR>
+            Other than "Just DO NOT do that!"<BR>
           </aside>
         </section>
 
-	<section>
-	  CLI processes pid finder<BR>
+        <section>
+          CLI Bash<BR>
+          <BR>
+          Starting with the CLI, I often use the CLI to work out what I want to do in a script<BR>
+          <BR>
+          Use '<code>;</code>' to put several commands on the same line.<BR>
+          <code>while</code> has a little different format<BR>
+          <pre><code>
+ while true; do clear; uptime; ls -lrt; read -t 10 ANS; done
+          </code></pre><br>
+          <aside class="notes">
+            Often work in the CLI to build up what I want.<BR>
+          </aside>
+        </section>
+
+        <section>
+          CLI processes PID finder<BR>
           <BR>
           <pre><code>
-ps -eaf | grep xterm | grep -v grep | while read OWN PID STUFF; do echo $PID; done
+ ps -eaf | grep xterm | grep -v grep | while read OWN PID STUFF; do echo $PID; done
           </code></pre><br>
           <aside class="notes">
           </aside>
         </section>
 
         <section>
-	  CLI log colorize.<BR>
-	  <BR>
-	  <pre><code>
-tail -f mail.log | awk '
-/reachlocal/ {print "\033[33m" $0 "\033[39m" }
-/reject/ {print "\033[31m" $0 "\033[39m" }
-/convertcontacts/ {print "\033[32m" $0 "\033[39m"} // {print $0 }
-'
-	  </code></pre><BR>
-	  <aside class="notes">
-	    I sometimes run a 'tail -f' and put it in the background so I can still work on the terminal or I can do a 'date' to add to the log output.<BR>
-	</section>
-
-	<section>
-	  Moving it to a file!<BR>
-	  Once you have a few commands you are going to use you can put them into a file.<BR>
-	  You will also want to make the file executable with chmod +x [FILENAME]<BR>
-	</section>
-	
-	<section>
-	  Simple Script!<BR>
+          CLI log colorize.<BR>
           <BR>
-	  put the folling code into a file example1.sh<BR>
-	  And then be sure to make it executable with chmod<BR>
-	  and run the script with ./example1.sh<BR>
           <pre><code>
-#!/bin/bash
+ tail -f mail.log | awk '
+ /reachlocal/ {print "\033[33m" $0 "\033[39m" }
+ /reject/ {print "\033[31m" $0 "\033[39m" }
+ /convertcontacts/ {print "\033[32m" $0 "\033[39m"} // {print $0 }
+ '
+          </code></pre><BR>
+          <aside class="notes">
+            I sometimes run a '<code>tail -f</code>' and put it in the background so I can still work on the terminal or I can do a '<code>date</code>' to add to the log output.<BR>
+        </section>
 
-# This is a simple example script.
+        <section>
+          Moving it to a file!<BR>
+          Once you have a few commands you are going to use you can put them into a file.<BR>
+          You will also want to make the file executable with <code>chmod +x [FILENAME]</code><BR>
+        </section>
 
-echo "Hello You!"
+        <section>
+          Simple Script!<BR>
+          <BR>
+          put the folling code into a file <code>example1.sh</code><BR>
+          And then be sure to make it executable with <code>chmod</code><BR>
+          and run the script with <code>./example1.sh</code><BR>
+          <pre><code>
+ #!/bin/bash
 
-exit 0
+ # This is a simple example script.
+
+ echo "Hello You!"
+
+ exit 0
           </code></pre><br>
           <aside class="notes">
-'#!/bin/bash' is special Un*x magic! This will cause the system to execute "/bin/bash" when the script is marked executable and run.<BR>
-'#' is a comment, when a bare # appears on a line anything after it will be ignored! <BR>             
+'<code>#!/bin/bash</code>' is special Un*x magic! This will cause the system to execute "<code>/bin/bash</code>" when the script is marked executable and run.<BR>
+'<code>#</code>' is a comment, when a bare <code>#</code> appears on a line anything after it will be ignored! <BR>
           </aside>
         </section>
 
-	<section>
+        <section>
           Another simple script with input<BR>
           <pre><code>
-#!/bin/bash
+ #!/bin/bash
 
-#Another simple script
+ #Another simple script
 
-echo "Hello."
-echo "The NSA would like to know your name. "
-echo "Would you please tell me ?"
-read ANAME
+ echo "Hello."
+ echo "The NSA would like to know your name. "
+ echo "Would you please tell me ?"
+ read ANAME
 
-echo "Thank you ${ANAME}"
-exit 0
+ echo "Thank you ${ANAME}"
+ exit 0
           </code></pre><br>
           <aside class="notes">
 There are a number of predefined variables.
-A better way to call bash is the use of "env bash"
-ie the first line of your script would be 
-#!/usr/bin/env bash 
+A better way to call Bash is the use of "<code>env bash</code>"
+ie the first line of your script would be
+<code>#!/usr/bin/env bash</code>
           </aside>
         </section>
 
-	<section>
-	  VARIABLES!<BR>
-	  <LI>Bash has variables
-	  <LI>There are local and global
-	  <LI>There are several variables that are pre-defined
-	  <LI>There are variables that some programs use, if defined!
-	</section>
-	
-	<section>
+        <section>
+          VARIABLES!<BR>
+          <LI>Bash has variables
+          <LI>There are local and global
+          <LI>There are several variables that are pre-defined
+          <LI>There are variables that some programs use, if defined!
+        </section>
+
+        <section>
           Programming is the process of doing a little processing...<BR>
-	  And doing A LOT of input checking!<BR>
+          And doing A LOT of input checking!<BR>
           <pre><code>
-#!/bin/bash
+ #!/bin/bash
 
-#Another simple script
+ #Another simple script
 
-echo "Hello."
-echo "The NSA would like to know your name. "
+ echo "Hello."
+ echo "The NSA would like to know your name. "
 
-while test -z "${ANAME}"
-do
-  echo "Would you please tell me ?"
-  read ANAME
-done
+ while test -z "${ANAME}"
+ do
+   echo "Would you please tell me ?"
+   read ANAME
+ done
 
-echo "Thank you ${ANAME}"
-exit 0
+ echo "Thank you ${ANAME}"
+ exit 0
           </code></pre><br>
           <aside class="notes">
           </aside>
         </section>
 
-	<section>
-	  Redirection!<BR>
-	  <LI>Stdin is the default input (keyboard)<BR>
-	  <LI>Stdout is where the standard output will go (terminal)<BR>
-	  <LI>Stderr is where the output for the errors (terminal)<BR>
-	  <LI>File descriptiors 0 - stdin , 1 - stdout, 3 - stderr <BR>
-	  > >> 2> 2>> <BR>
-	  <pre><code>
+        <section>
+          Redirection!<BR>
+          <LI>Stdin is the default input (keyboard)<BR>
+          <LI>Stdout is where the standard output will go (terminal)<BR>
+          <LI>Stderr is where the output for the errors (terminal)<BR>
+          <LI>File descriptiors 0 - stdin , 1 - stdout, 3 - stderr <BR>
+          <code>> >> 2> 2>></code> <BR>
+          <pre><code>
  command > stdout_goes_here.test 2> stderr_out_goes_here.text
           </code></pre><br>
           <aside class="notes">
-	    Bash manual on redirection
-	    http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-3.html
+            Bash manual on redirection
+            http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-3.html
           </aside>
         </section>
 
-	<section>
+        <section>
           <LI>You can have other input/output streams...<BR>
-	  <LI>Both of the output streams goto the screen <BR>
-	  hard to tell apart.<BR>
-	  (Some programs use stderr to send messages/prompts)<BR>
+          <LI>Both of the output streams goto the screen <BR>
+          hard to tell apart.<BR>
+          (Some programs use stderr to send messages/prompts)<BR>
           <pre><code>
-ssh www.goecke-dolan.com "ps -eaf" > atemp.log
+ ssh www.goecke-dolan.com "ps -eaf" > atemp.log
           </code></pre><br>
           <aside class="notes">
-	    Great example, where did the output go ? <BR>
-	    But it didn't go ?<BR>
-	    So ... stdout went to the file (via the '>')<BR>
-	    but the stderr goes to the screen...<BR>
+            Great example, where did the output go ? <BR>
+            But it didn't go ?<BR>
+            So ... stdout went to the file (via the '>')<BR>
+            but the stderr goes to the screen...<BR>
           </aside>
         </section>
 
-	<section>
+        <section>
           Another Example<BR>
-	  Send stdout and stderr to log file<BR>
+          Send stdout and stderr to log file<BR>
           <pre><code>
-tar -cvf A_Backup_File.tar.gz 2>&1 > A_Backup_File.log
+ tar -cvf A_Backup_File.tar.gz 2>&1 > A_Backup_File.log
           </code></pre><br>
           <br>
           <aside class="notes">
           </aside>
         </section>
 
-	<section>
-          Pipes!<BR> 
-	  Another form for redirection<BR>
-	  Sends output from one process to the input of another process<BR>
+        <section>
+          Pipes!<BR>
+          Another form for redirection<BR>
+          Sends output from one process to the input of another process<BR>
           <pre><code>
-ps -eaf | grep grep | cut -d\  -f1 | more
+ ps -eaf | grep grep | cut -d\  -f1 | more
           </code></pre><br>
           <aside class="notes">
-	    Can you send only stderr to another process ? <BR>
-	    hummm.... <BR>
+            Can you send only stderr to another process ? <BR>
+            hummm.... <BR>
           </aside>
         </section>
 
-	<section>
+        <section>
           Cutting and reformating<BR>
-	  Often need to reformat input<BR>
-	  You can use Un*x tools<BR>
+          Often need to reformat input<BR>
+          You can use Un*x tools<BR>
           <pre><code>
           </code></pre><br>
           <aside class="notes">
           </aside>
         </section>
 
-	<section>
-	  Better Bashing!<BR>
-	  <BR>
+        <section>
+          Better Bashing!<BR>
+          <BR>
           <aside class="notes">
           </aside>
         </section>
 
-	<section>
-          Lots of bash scripts are written<br>
-	  in the heat of the moment!<BR>
-	  Be prepared!<BR>
+        <section>
+          Lots of Bash scripts are written<br>
+          in the heat of the moment!<BR>
+          Be prepared!<BR>
           <br>
-	  <LI>Practice, write A LOT of scripts!<BR>
-	  <LI>Plan, have a template to start with<BR>
+          <LI>Practice, write A LOT of scripts!<BR>
+          <LI>Plan, have a template to start with<BR>
           <aside class="notes">
           </aside>
         </section>
 
-	<section>
-	  <A href="https://github.com/bdgoeko/Presentations/blob/master/March_Bashness/example_template.sh">My Example<BR>
-	  Template</A><BR>
+        <section>
+          <A href="https://github.com/bdgoeko/Presentations/blob/master/March_Bashness/example_template.sh">My Example<BR>
+          Template</A><BR>
           <br>
           <aside class="notes">
-	    Okay so I don't always practice what I preach... <BR>
-	    You can get my example template script <A href="https://github.com/bdgoeko/Presentations/blob/master/March_Bashness/example_template.sh">here</A><BR>
+            Okay so I don't always practice what I preach... <BR>
+            You can get my example template script <A href="https://github.com/bdgoeko/Presentations/blob/master/March_Bashness/example_template.sh">here</A><BR>
           </aside>
         </section>
 
-	<section>
+        <section>
           Practice, Practice, Practice<BR>
-	  <BR>
-	  Often write bash every day one way or another.<BR>
+          <BR>
+          Often write Bash every day one way or another.<BR>
           <aside class="notes">
           </aside>
         </section>
 
-	<section>
-	  clean exit<BR>
-	  <BR>
-	  Know what your exit code will be.<BR>
-	  In bash (Un*x Shell) 0 == Good exit<BR>
-	  and <> 0 bad...<BR>
+        <section>
+          clean exit<BR>
+          <BR>
+          Know what your exit code will be.<BR>
+          In Bash (Un*x Shell) 0 == Good exit<BR>
+          and &lt;> 0 bad...<BR>
           <A Href="http://www.tldp.org/LDP/abs/html/exitcodes.html">Exit codes</A>
-	</section>
+        </section>
 
-	<section>
-	  Know your exit code<BR>
-	  <BR>
-	  You can use the exit from a command you run, or set and give your own.<BR>
-	  But give an exit code, and be sure you understand what it will be!<BR>
-	</section>
+        <section>
+          Know your exit code<BR>
+          <BR>
+          You can use the exit from a command you run, or set and give your own.<BR>
+          But give an exit code, and be sure you understand what it will be!<BR>
+        </section>
 
-	<section>
-	  Debugging Bash<BR>
-	  <BR>
-	  echo/print/output<BR>
-	  can also use logger to output to system logs<BR>
-	  set -v and '#!/bin/bash -v'<BR>
-	  <aside class="notes">
-	    You can define a variable with the number of the file handle of where the debug output should go.<BR>
-	    Then of course you can redirect that file handle to a file.<BR>
-	    BASH_XTRACEFD=9; script2run.sh 9> ~/script2run_debug.log <BR>
+        <section>
+          Debugging Bash<BR>
+          <BR>
+          <code>echo</code>/<code>print</code>/output<BR>
+          can also use logger to output to system logs<BR>
+          <code>set -v</code> and '<code>#!/bin/bash -v</code>'<BR>
+          <aside class="notes">
+            You can define a variable with the number of the file handle of where the debug output should go.<BR>
+            Then of course you can redirect that file handle to a file.<BR>
+            <code>BASH_XTRACEFD=9; script2run.sh 9> ~/script2run_debug.log</code> <BR>
             <A Href="">Here is a StackExchange Q and A about it.</A><BR>
-	    </aside>
-	</section>
-	
-	<section>
+            </aside>
+        </section>
+
+        <section>
           Difficulties with Bash<BR>
-	  <BR>
-	  Quoting... always have problems with quoting<BR>
-	  Special characters<BR>
+          <BR>
+          Quoting... always have problems with quoting<BR>
+          Special characters<BR>
           <br>
           <aside class="notes">
           </aside>
         </section>
 
-	<section>
-	  MUST RUN PEFECT!<BR>
-	  <BR>
-	  You can do a 'set -e' which will enable a mode that every command MUST execute successfully, or the script will exit.<BR>
-	  Usually the shell does not check or require every command to be successful, it leave that upto you !<BR>
-	</section>
-	
-	<section>
-	  Conclusions<BR>
-	  Bash Rocks!<BR>
-	</section>
+        <section>
+          MUST RUN PEFECTLY!<BR>
+          <BR>
+          You can do a '<code>set -e</code>' which will enable a mode that every command MUST execute successfully, or the script will exit.<BR>
+          Usually the shell does not check or require every command to be successful, it leave that up to you !<BR>
+        </section>
 
-	<section>
+        <section>
+          Conclusions<BR>
+          Bash Rocks!<BR>
+        </section>
+
+        <section>
           Thanks! <BR>
           You can contact me here, now.<BR>
-	  <A href="http://sessions.minnestar.org/sessions/485"> March Bashness @Minnebar</A>
+          <A href="http://sessions.minnestar.org/sessions/485"> March Bashness @Minnebar</A>
           <BR>
           Basher@Goecke-Dolan.com<BR>
           <br>
@@ -414,27 +414,29 @@ ps -eaf | grep grep | cut -d\  -f1 | more
           </aside>
         </section>
 
-	<section>
-	  Additional Resources<BR>
-	  <BR>
-	  <A Href="http://www.goecke-dolan.com/Brian/Projects/Presentations/Bash_Lighting/reveal.js/#/"> My Bash Lighting Presentation</A><BR>
-	  <A Href="http://unix.stackexchange.com/questions/251381/bash-regular-expression-pattern-matching-spaces-within-double-brackets-test-us"> Bash ~= Regex match </A><BR>
-	  <A Href="http://bencane.com/2014/09/02/understanding-exit-codes-and-how-to-use-them-in-bash-scripts/">Exit Codes </A><BR>
-	  <A Href="https://www.packtpub.com/packt/offers/free-learning">Packt Free Book </A><BR>
-	  <A Href=""> </A><BR>
+        <section>
+          Additional Resources<BR>
+          <BR>
+          <A Href="http://www.goecke-dolan.com/Brian/Projects/Presentations/Bash_Lighting/reveal.js/#/"> My Bash Lighting Presentation</A><BR>
+          <A Href="http://unix.stackexchange.com/questions/251381/bash-regular-expression-pattern-matching-spaces-within-double-brackets-test-us"> Bash ~= Regex match </A><BR>
+          <A Href="http://bencane.com/2014/09/02/understanding-exit-codes-and-how-to-use-them-in-bash-scripts/">Exit Codes </A><BR>
+          <A Href="https://www.packtpub.com/packt/offers/free-learning">Packt Free Book </A><BR>
+          <A Href=""> </A><BR>
           <aside class="notes">
             Think that sums it up! <BR>
-	    <BR>
-	    Bash Away !<BR>
+            <BR>
+            Bash Away !<BR>
           </aside>
         </section>
 
         <section>
-	  Always exit with status!
+          Always exit with status!
           <br>
-exit 0
+          <pre><code>
+ exit 0
+          </code></pre>
           <aside class="notes">
-	    Good Bye.
+            Good Bye.
           </aside>
         </section>
       </div>

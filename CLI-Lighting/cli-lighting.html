@@ -33,7 +33,7 @@ Slide 20
         </section>
 
  <section>
-          whomai<br>
+          <code>whomai</code><br>
           Brian Dolan-Goecke <br>
           Hacking Un*x for 30 year <br>
           Started in AT &amp; T SYS VR3 <BR>
@@ -43,8 +43,8 @@ Slide 19
         </section>
 
  <section>
-          cut<BR>
-          echo `blpah command` | cut -d\  -f5 <BR>
+          <code>cut</code><BR>
+          <code>echo `blah command` | cut -d\  -f5</code> <BR>
           <BR>
           Example:
           <pre><code>
@@ -56,24 +56,25 @@ Slide 19
           <br>
 Slide 18
         <aside class="notes">
-          cut the cermic knife of shell!
+          <code>cut</code>, the ceramic knife of shell!
         <aside>
         </section>
 
  <section>
-          date <BR>
+          <code>date</code> <BR>
           <BR>
           Example:
           <pre><code>
+ date -Iseconds
           </code></pre><br>
           <br>
 Slide 17
         <aside class="notes">
-          excuse me, do you have the time ? 
+          Excuse me, do you have the time ?
         <aside>
         </section>
 
- <section>         
+ <section>
           <BR>
           <BR>
           Example:
@@ -146,7 +147,7 @@ Slide 11
 
 <section>
           Sub command execution <BR>
-              $( ) <BR>
+              <code>$( )</code> <BR>
           <BR>
           Example:
           <pre><code>
@@ -159,29 +160,29 @@ Slide 10
         </section>
 
         <section>
-          
+
           Setting Variables <BR>
-          let <BR>
+          <code>let</code> <BR>
           <BR>
           Example:
           <pre><code>
-let A++
+ let A++
           </code></pre><br>
           <br>
 Slide 9
           <aside class="notes">
-            About time something better than expr !!
+            About time something better than <code>expr</code> !!
           </aside>
         </section>
 
 <section>
           IO Redirection <BR>
-          > >> >& x>  <BR>
-          <BR> 
+          <code>> >> >& x></code> <BR>
+          <BR>
           Example:
           <pre><code>
-              ping -c 1 anode.com > /dev/null 2>&1 ; PINGSTATUS=$?
-              tar -cvf ~/A_Tar_File.tar 2> ~/tar_errors.text > bacuped_files.log
+ ping -c 1 anode.com > /dev/null 2>&1 ; PINGSTATUS=$?
+ tar -cvf ~/A_Tar_File.tar 2> ~/tar_errors.text > backup_files.log
           </code></pre><br>
           <br>
 Slide 8
@@ -192,7 +193,7 @@ Slide 8
 
  <section>
           Avoid Variable not set error <BR>
-          test x"${VAR}" = x"y" <BR>
+          <code>test x"${VAR}" = x"y"</code> <BR>
           <BR>
           Example:
           <pre><code>
@@ -200,7 +201,7 @@ Slide 8
           <br>
 Slide 7
           <aside class="notes">
-            To ensure it doesn't error of there is no value for ${VAR}
+            To ensure it doesn't error of there is no value for <code>${VAR}</code>
             You will see this in all kinds of pre-packaged scripts...
           </aside>
         </section>
@@ -240,7 +241,7 @@ Emacs Flavor ( set -o emacs )
 Vi Flavor ( set -o vi )
   j - previous command
   k - next command
-           
+
  and the 'history' command, of course...
           </code></pre><br>
           <br>
@@ -256,14 +257,14 @@ Slide 5
           </code></pre>
           Example:
           <pre><code>
-              - Last Directory
-              ~ home directory
-	  cd
-	  # Dang just lost the directory I was working in.... but wait
-	  cd -
-	  # Back to where I was !
-          cd ~/where/the/files/are/from/my/home/direcotry
-	  ( also pushd and popd can be useful )
+ # - Last directory
+ # ~ Home directory
+ cd
+ # Dang just lost the directory I was working in.... but wait
+ cd -
+ # Back to where I was !
+ cd ~/where/the/files/are/from/my/home/direcotry
+ # ( also pushd and popd can be useful )
           </code></pre><br>
           <br>
 Slide 4
@@ -274,37 +275,37 @@ Slide 4
 
  <section>
               A Whole bunch of command line commands. <BR>
-                wc -l <BR>
-                tr <BR>
-                tee <BR>
-                script <BR>
+                <code>wc -l</code> <BR>
+                <code>tr</code> <BR>
+                <code>tee</code> <BR>
+                <code>script</code> <BR>
               See my next lighting talk... <BR>
               Command Line Tools
           <BR>
           Example:
           <pre><code>
-              FILE_CNT=`ls -1 *files* | wc -l`
+ FILE_CNT=`ls -1 *files* | wc -l`
           </code></pre><br>
           <br>
 Slide 3
           <aside class="notes">
-            Used to have to use expr (or something perverse) for all shell math.
+            Used to have to use <code>expr</code> (or something perverse) for all shell math.
             Okay not strictly a shell, but very useful.
           </aside>
         </section>
 
 
  <section>
-          Get help with bash built-in <BR>
-          help command <BR>
+          Get help with Bash built-in <BR>
+          <code>help command</code> <BR>
           <BR>
           Example:
           <pre><code>
-help variables
+ help variables
           </code></pre><br>
           <aside class="notes">
             Thanks to ... who I believe suggested this.
-            I didn't know until then that it was for bash built-ins!
+            I didn't know until then that it was for Bash built-ins!
             because you really don't want to dig through the man page, it is WAYYY too long.
           </aside>
           <br>
@@ -338,11 +339,13 @@ Slide -1
         </section>
 
         <section>
-	  Always exit with status!
+          Always exit with status!
           <br>
-exit 0
+          <pre><code>
+ exit 0
+          </code></pre>
           <aside class="notes">
-	    Good Bye.
+            Good Bye.
           </aside>
         </section>
       </div>
