@@ -143,7 +143,7 @@ $ git checkout -b how_i_get
           <BR>Slide 22
           <aside class="notes">
             I have run into some big probems with branch names and plugins/intergrations. <BR>
-            Be sure you understand nay intergrations used in your systems!<BR>
+            Be sure you understand any intergrations used in your systems!<BR>
           </aside>
         </section>
 
@@ -167,7 +167,7 @@ $ git checkout -b how_i_get
 <section>
           More work with Branch<BR>
           <BR>
-          We will switch back to the master branch.<BR>
+          We can switch to a different branch.<BR>
           <pre><code>
 $ git checkout master
 M	How_I_Git/how_i_git.html
@@ -178,10 +178,12 @@ $ git branch
   how_i_get
 * master
           </code></pre><BR>
+          In this case we just switched back to the master branch... we could switch to any branch.<BR>
+          Rember though you are working on that branch then any changes your add and commit will be on that branch!<BR>
           <BR>Slide 22
           <aside class="notes">
-            I have run into some big probems with branch names and plugins/intergrations. <BR>
-            Be sure you understand nay intergrations used in your systems!<BR>
+            You can always use 'git status' to see what branch you are are<BR>
+            There are also ways to have your branch displayed on the prompt<BR>
           </aside>
         </section>
 
@@ -233,20 +235,35 @@ no changes added to commit (use "git add" and/or "git commit -a")
           <BR>
           <pre><code>
 $ git add how_i_git.html 
+$ git add How_I_Git_Workflow.png 
 $ git status
 On branch how_i_get
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
+	new file:   How_I_Git_Workflow.png
 	modified:   how_i_git.html
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	How_I_Git_Workflow.png
           </code></pre>
+          Here both files are added to the repo.<BR>
           <BR>Slide 19
           <aside class="notes">
+          </aside>
+        </section>
+
+ <section>
+          Commit Changes<BR>
+          <BR>
+          These changes look good, the code is functioning we are ready to commit this code.<BR>
+          <pre><code>
+$ git commit -m "Added graphic of how I Git and added more slides"
+[how_i_get f7905ac] Added graphic of how I Git and added more slides
+ 2 files changed, 12 insertions(+), 30 deletions(-)
+ create mode 100644 How_I_Git/How_I_Git_Workflow.png
+          </code></pre>
+          You can see the files added, along with some details about the added files.<BR>
+          <BR>Slide 18
+          <aside class="notes">
+            You can use a git commit -a -m "Perfect code, as always!"
           </aside>
         </section>
 
@@ -256,7 +273,7 @@ Untracked files:
           At this point you can continue to work and commit changes as long a you like.<BR> 
           But all chnages on *ONLY* being local stored, nothing has been "pushed" to the server.<BR> 
           So chnages could be lost if you lose your hard drive.<BR>
-          <BR>Slide 18
+          <BR>Slide 17
           <aside class="notes">
             How many changes, how much to push are often a personal decision.<BR>
             but I would argue for commit and push often!<BR>
@@ -264,24 +281,23 @@ Untracked files:
         </section>
 
  <section>
+          Ready to Push<BR>
           <BR>
-          <BR>
-          <BR>Slide 17
-          <aside class="notes">
-          </aside>
-        </section>
-
- <section>
-          <BR>
-          <BR>
+          We have made great progress, we have good that is working.<BR>
+          We may want to add more features, or refine some parts, but we can do that later we want to make the code availbe for others to look at.<BR>
+          So it is time to push the code.<BR>
+          This will put the code in the branch on the server.<BR>
           <BR> Slide 16
           <aside class="notes">
           </aside>
         </section>
 
  <section>
+          Push branch<BR>
           <BR>
-          <BR>
+          <pre><code>
+
+          </code></pre>
           <BR>Slide 15
           <aside class="notes">
           </aside>
@@ -490,6 +506,7 @@ $ git checkout {filename}
           $ git status <BR>
           $ git log <BR>
           $ git squash <BR>
+          $ git branch -d {branch_name}  <BR>
           $   <BR>
           <BR>
           <BR>Slide 0
