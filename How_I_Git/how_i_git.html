@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>How I GIT</title>
+    <title>How I Git</title>
     <link rel="stylesheet" href="../reveal.js/css/reveal.css">
     <link rel="stylesheet" href="../reveal.js/css/theme/sky.css">
     <!-- Theme used for syntax highlighting of code -->
@@ -22,15 +22,15 @@
       <div class="slides">
 
  <section>
-          How I GIT <br>
+          How I Git <br>
           <br>
           Brian Dolan-Goecke<br>
           <br>
           Version 0.0.0 <BR>
           Copyright 2019 Brian Dolan-Goecke <BR>
-          <BR> Slide 30
+          <BR>Slide 30
           <aside class="notes">
-          <aside>
+          </aside>
         </section>
 
  <section>
@@ -41,38 +41,44 @@
           DevOps Engineer <BR>
           <BR>Slide 29
           <aside class="notes">
-          <aside>
+          </aside>
         </section>
 
  <section>
-          What is GIT ? <BR>
+          What is Git ? <BR>
           <BR>
-          GIT is a distributed Revision Control System<BR>
-          <BR> Slide 28
+          Git is a distributed Revision Control System<BR>
+          <BR>Slide 28
           <aside class="notes">
-          <aside>
+          </aside>
         </section>
 
 <section>
-          Where is GIT from ? <BR>
+          Where is Git from ? <BR>
           <BR>
-          GIT was developed by <A Href="https://en.wikipedia.org/wiki/Linus_Torvalds"> Linux Torvalds</A> in 2005 after after many developers of the Linux kernel gave up access to <A Href="https://en.wikipedia.org/wiki/BitKeeper">BitKeeper</A>.<BR>
-          <BR> Slide 27
+          Git was developed by <A Href="https://en.wikipedia.org/wiki/Linus_Torvalds"> Linux Torvalds</A> in 2005 after after many developers of the Linux kernel gave up access to <A Href="https://en.wikipedia.org/wiki/BitKeeper">BitKeeper</A>.<BR>
+          <BR>Slide 27.5
           <aside class="notes">
-          <aside>
+          </aside>
         </section>
 
 <section>
-          Why use GIT ? <BR>
+          Why use Git ? <BR>
           <BR>
+          Git is Open Source <A Href="https://github.com/git/git"> Git's Git Repo </A><BR>
           Available client/server on Linux <BR>
           Easy to use once started<BR>
           GitHubm<BR>
           Available client for several platforms (I believe servers are also available.)<BR>
           Used by a lot of opensource projects<BR>
-          Open Source Project<BR>
           <BR>
-          Where have I used GIT ?
+          <BR>Slide 27
+          <aside class="notes">
+          </aside>
+        </section>
+
+<section>
+          Where have I used Git ?
           <BR>
           Work Code Development <BR>
           Work Repo's for Puppet, Ansible and other tools.<BR>
@@ -81,15 +87,16 @@
           <BR> Slide 26
           <aside class="notes">
             Pretty much easy to use, and avaialbe everywhere..<BR>
-          <aside>
+          </aside>
         </section>
 
 <section>
-          How do I use GIT ? <BR>
+          How do I use Git ? <BR>
           <IMG Src="xkcd_git_2x.png" Width=40% Title="How to use git"></IMG> <BR>
           <A Href="https://xkcd.com/1597/"> Original XKCD comic link https://xkcd.com/1597/ </A> <BR>
           <BR>Slide 25
           <aside class="notes">
+           Offically this is a tech presentation it has an XKCD comic!
           </aside>
         </section>
 
@@ -104,280 +111,212 @@
  <section>
           Clone<BR>
           (Copy code local)<BR>
+          <BR>
+          <pre><code>
+$ git clone https://github.com/bdgoeko/Presentations.git 
+          </code></pre><BR>
+          You can use a https or an ssh url to clone the code, you usually get this by going to repo.<BR>
           <BR>Slide 23
           <aside class="notes">
-            I don't believe you can copy part of a tree.<BR>
+            I don't believe you can copy part of a repo.<BR>
             Not sure that would be a good idea even if you could<BR>
+            Should add screen shot that shows where they are in the UI...<BR>
+            Not as easy to find for hardcore CLI'r<BR>
+            but.. <BR>
+            For a local project, on the same machine and you have access to read (and write ?)<BR>
+            $ git clone  /srv/home/goeko/Projects/Git/experments/<BR>
+            Again for a "local" machine that you have ssh access to <BR>
+            $ git clone gituser@example.com:/opt/jupiter.git jupiter.clone<BR>
           </aside>
         </section>
 
 <section>
           Branch<BR>
           <BR>
-<BR>Slide 22
-          <aside class="notes">
-          </aside>
-        </section>
-
-<section>
-          <BR>
-          <BR>
-          Example:
           <pre><code>
-$ git branch MySuperSecretMagicBranch
+$ git checkout -b how_i_get
           </code></pre><BR>
+          This will create a branch and check it out.<BR>
+          <BR>
+          All work you do from now on will be on this branch.<BR>
+          <BR>Slide 22
           <aside class="notes">
             I have run into some big probems with branch names and plugins/intergrations. <BR>
             Be sure you understand nay intergrations used in your systems!<BR>
           </aside>
-          <BR>
-<BR>Slide 21
         </section>
 
 <section>
-          Make Magic!<BR>
+          Digressions on branching/branches<BR>
+          <BR>
+          You may want to designate "special" branchs for important purposes. <BR>
+          ie. The Master branch is always the current production code.<BR>
+             and the "dev" branch is always the pre-Production code... <BR>
+          You can enfore this multiple ways, and depends on the server you are using.<BR>
+          <BR>
+          see <A Href="https://git-scm.com/about"> https://git-scm.com/about </A><BR>
+          <BR>
+          <BR>Slide 21
+          <aside class="notes">
+            This can be very useful.<BR>
+            If this is done it should also be well publisied.<BR>
+          </aside>
+        </section>
+
+<section>
+          More work with Branch<BR>
+          <BR>
+          <pre><code>
+$ git checkout master
+M	How_I_Git/how_i_git.html
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+$ git branch
+  AnotherBranchToShowMultipleBranchs
+  how_i_get
+* master
+          </code></pre><BR>
+          .<BR>
+          <BR>
+          All work you do from now on will be on this branch.<BR>
+          <BR>Slide 22
+          <aside class="notes">
+            I have run into some big probems with branch names and plugins/intergrations. <BR>
+            Be sure you understand nay intergrations used in your systems!<BR>
+          </aside>
+        </section>
+
+<section>
+          Code Magic!<BR>
           <BR>
           Now you are ready to edit your code, make the magic changes that will make the World Better....<BR>
           or at least your code base<BR>
           <BR>
-          So made your changes, edit with your favorite editor.<BR>
-          <BR>
-<BR>Slide 20
+          So make your changes, edit with your favorite editor.<BR>
+          <BR>Slide 20.5
           <aside class="notes">
-            I use often use 'vi' someotimes 'emacs' but I don't often use and editor that is GIT aware...<BR>
+            I use often use 'vi' sometimes even 'emacs' but I don't often use and editor that is Git aware...<BR>
             Just a bad habit on my part.<BR>
           <BR>
           </aside>
         </section>
 
 <section>
-          Now add in your changes.<BR>
+          Look Git noticed your changes<BR>
           <BR>
-          <BR>
-          Example:
           <pre><code>
-git status
-git add Readme.md
-git status
-          </code></pre><br>
-          <br>
-Slide 19
+$ git status
+On branch how_i_get
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   how_i_git.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+          </code></pre>
+          <BR>Slide 20
           <aside class="notes">
-            At this point you may have some files you know you don't want in your repo.<BR>
-            You can block files by adding a .gitignore file in your directory.<BR>
-            Believe you can put that in any directory, but it will only effect from then on down in your repo hierachy<BR>
+            I use often use 'vi' sometimes even 'emacs' but I don't often use and editor that is Git aware...<BR>
+            Just a bad habit on my part.<BR>
           </aside>
         </section>
 
 <section>
-          IO Redirection <BR>
-          > >> >& x>  <BR>
+          Commit code<BR>
+          <BR>
+          <BR>Slide 19
+          <pre><code>
+$ git commit  -m "My code comment here"
+$ git status
+          </code></pre>
+          <aside class="notes">
+          </aside>
+        </section>
+
+<section>
+          Code more changes<BR>
           <BR> 
-          Example:
-          <pre><code>
-ping -c 1 anode.com > /dev/null 2>&1 ; PINGSTATUS=$?
-tar -cvf ~/A_Tar_File.tar 2> ~/tar_errors.text > bacuped_files.log
-          </code></pre><br>
-          <br>
-Slide 18
+          At this point you can continue to work and commit changes as long a you like.<BR> 
+          But all chnages on *ONLY* being local stored, nothing has been "pushed" to the server.<BR> 
+          So chnages could be lost if you lose your hard drive.<BR>
+          <BR>Slide 18
           <aside class="notes">
-            You can make your own file descriptors also.
-            and send it all to /dev/null!
-            sudo ln -s /dev/null /dev/hell
-            echo "You can goto...." > /dev/hell
+            How many changes, how much to push are often a personal decision.<BR>
+            but I would argue for commit and push often!<BR>
           </aside>
         </section>
 
  <section>
-          Avoid Variable not set error <BR>
-          test x"${VAR}" = x"y" <BR>
           <BR>
-          Example:
-          <pre><code>
-$ if test x${VAR} = xyes; then echo "one"; else echo "two"; fi
-two
-$ if test ${VAR} = yes; then echo "one"; fi
-bash: test: =: unary operator expected
-^^ avoid that ^^
-          </code></pre><br>
-          <br>
-Slide 17
+          <BR>
+          <BR>Slide 17
           <aside class="notes">
-            To ensure it doesn't error because of there is no value for ${VAR}
-            You will see this in all kinds of pre-packaged scripts...
-            You could also  test -n or -z to see if it does have a value or does not have a value...
           </aside>
         </section>
 
  <section>
-             Command Line Editing <BR>
           <BR>
-          Example:
-          <pre><code>
- Emacs Flavor ( set -o emacs )
-   ^a - beginning of line
-   ^e - end of line
-   ^f - forward a character
-   ^b - backward a character
- Vi Flavor ( set -o vi )
-   0 - beginning of line
-   $ - end of line
-   i - insert
-   x - delete character
-          </code></pre><br>
-          <br>
-Slide 16
+          <BR>
+          <BR> Slide 16
           <aside class="notes">
-          Of course vi mode users remember to go into command mode with the escape key
           </aside>
         </section>
 
  <section>
-          Command History <br>
-          <br>
-          Example:
-          <pre><code>
-Emacs Flavor ( set -o emacs )
-  ^p - previous Command
-  ^n - next command
-  ^r - search backwards
-Vi Flavor ( set -o vi )
-  j - previous command
-  k - next command
-           
- and the 'history' command, of course...
-          </code></pre><br>
-          <br>
-Slide 15
+          <BR>
+          <BR>
+          <BR>Slide 15
           <aside class="notes">
-          Of course vi mode users remember to go into command mode with the escape key
           </aside>
         </section>
 
  <section>
-          Directory shortcuts  <BR>
-          cd - and cd ~ <BR>
           <BR>
-          Example:
-          <pre><code>
-              - Last Directory
-              ~ home directory
-	  cd
-	  # Dang just lost the directory I was working in.... but wait
-	  cd -
-	  # Back to where I was !
-          cd ~/where/the/files/are/from/my/home/direcotry
-	  ( also pushd and popd can be useful )
-          </code></pre><br>
-          <br>
-Slide 14
-          <aside class="notes">
-            Best thing since sliced bread!
-          </aside>
-        </section>
-
-<section>
-              A Whole bunch of command line commands. <BR>
-                wc -l <BR>
-                tr <BR>
-                tee <BR>
-                script <BR>
-              See my next lighting talk... <BR>
-              <A Href="http://www.goecke-dolan.com/Brian/Projects/Presentations/CLI_Lighting/reveal.js/"> CLI Lighting! </A>
           <BR>
-          Example:
-          <pre><code>
-              FILE_CNT=`ls -1 *files* | wc -l`
-          </code></pre><br>
-          <br>
-Slide 13
-          <aside class="notes">
-            Used to have to use expr (or something perverse) for all shell math.
-            Okay not strictly a shell, but very useful.
-          </aside>
-        </section>
-
-<section>
-          case ${VAR} in  <BR>
-          for VAR in  <BR>
-          while true <BR>
-          Example:
-          <pre><code>
-case ${VAR} in 
-  blah|BLAH|[bB][Ll][aA][Hh])
-    echo "HaHaHa"
-  ;;
-  *)
-    echo "HoHoHO"
-  ;;
-esac
-
-for VAR in one two three
-do
-  echo $VAR
-  echo ${BAR[${VAR}]}
-done
-
-while test 1 -eq 1
-do
-  echo "Going to do this FOREVER"
-  echo "And you can't stop me..."
-done
-
-          </code></pre><br>
-          <aside class="notes">
-            Big fan of case... use it quite a bit.. may just be for the esac!
-          </aside>
-          <br>
-Slide 12
+          <BR>Slide 14
           <aside class="notes">
           </aside>
         </section>
 
 <section>
-          Get help with bash built-in <BR>
-          help command <BR>
           <BR>
-          Example:
-          <pre><code>
-help variables
-          </code></pre><br>
-          <aside class="notes">
-            Thanks to ... who I believe suggested this.
-            I didn't know until then that it was for bash built-ins!
-            because you really don't want to dig through the man page, it is WAYYY too long.
-          </aside>
-          <br>
-Slide 11
+          <BR>
+          <BR>Slide 13
           <aside class="notes">
           </aside>
         </section>
 
 <section>
-	Bash Networking<BR>
-	<BR>
-	Send or receive network traffic dirrectly with bash...<BR>
-	<BR>
-	Example:<BR>
-	<pre><code>
-	..... /dev/tcp/10.1.1.1/
-	</code></pre>
-          <br>
-Slide 10
-        <aside class="notes">
-          This is nuts... no that isn't a real device... <BR>
-          This is right from bash, not a device on the system... <BR>
-          Someone has done the unthinkable and created a Web Server in bash... yes...<BR>
-          I will find the link and of course add it here...<BR>
-        </aside>
+          <BR>
+          <BR>
+          <BR>Slide 12
+          <aside class="notes">
+          </aside>
+        </section>
+
+<section>
+          <BR>
+          <BR>
+          <BR>Slide 11
+          <aside class="notes">
+          </aside>
+        </section>
+
+<section>
+	  <BR>
+	  <BR>
+	  <BR>
+          <BR>Slide 10
+          <aside class="notes">
+          </aside>
    	</section>
 
 <section>
-          BLANK SLIDE<BR>
+          <BR>
           <BR>
           <BR>Slide 7
           <aside class="notes">
-            Blank Comments on blank slide.<BR>
           </aside>
         </section>
 
@@ -409,34 +348,70 @@ Slide 10
         </section>
 
 <section>
-          BLANK SLIDE<BR>
+          See what you have done!<BR>
+          <BR>
+          <pre><code>
+$ git log
+commit 010e9237517f67e1405ad2b42c640202a0f9a8d5 (HEAD -> how_i_get, origin/master, origin/HEAD, master)
+Author: Brian Dolan-Goecke <goeko@Goecke-Dolan.com>
+Date:   Wed Feb 13 22:41:17 2019 -0600
+
+    Updated notes on how to view presentations with reveal.js
+
+commit aeca3214ad5ad53c47d30a6b5fe1ebc0bae99725
+Author: Brian Dolan-Goecke <goeko@Goecke-Dolan.com>
+Date:   Wed Feb 13 22:19:40 2019 -0600
+
+    More work on How I GIT, and notes about presentations
+...
+          </code></pre>
+          There is a lot more this command can show you, see the man page :)<BR>
           <BR>
           <BR>Slide 3
           <aside class="notes">
-            Blank Comments on blank slide.<BR>
           </aside>
         </section>
 
 <section>
-          BLANK SLIDE<BR>
+          How to Undo a commit<BR>
+          <BR>
+          If you want to undo, remove, take away the last commit<BR>
+          What you are doing in Git is moving the HEAD pointer backwards X links back.<BR>
+          ie. undo the changes that are in the what HEAD currently points to<BR>
+          <BR>
+          This can be *VERY* messy, handle with great care... you may way to archive the the whole hierarchy<BR>
           <BR>
           <BR>Slide 2
           <aside class="notes">
-            Blank Comments on blank slide.<BR>
+            Do at you own risk!<BR>
+            Just like working with 'rm' measure a few times 'rm' only once with good backups!<BR>
           </aside>
         </section>
 
 <section>
-          BLANK SLIDE<BR>
+          How to revert file back to last pull<BR>
+          (ie undo those changes you did that just screwed up the file you wanted... arg.)<BR>
+          <BR>
+<pre><code>
+$ git checkout {filename} 
+</code></pre><BR>
           <BR>
           <BR>Slide 1
           <aside class="notes">
-            Blank Comments on blank slide.<BR>
+            Yea use that more that I would like to admit.<BR>
+            And of course I often copy that file out first, and the revert it... then see if that was what I really wanted to do!<BR>
           </aside>
         </section>
 
 <section>
-          BLANK SLIDE<BR>
+          Other useful Git commands<BR>
+          <BR>
+          $ git show remote <BR>
+          $ git checkout filename<BR>
+          $ git status <BR>
+          $ git log <BR>
+          $ git squash <BR>
+          $   <BR>
           <BR>
           <BR>Slide 0
           <aside class="notes">
@@ -445,11 +420,14 @@ Slide 10
         </section>
 
 <section>
-          BLANK SLIDE<BR>
+          Definitions<BR>
+          <HR>
           <BR>
-          <BR>Slide 0
+          repo - A tree of source code, short for Reposiary<BR>
+          hURL - a URL, and what A URL look like!<BR>
+          <BR>Slide Definitions <BR>
           <aside class="notes">
-            Blank Comments on blank slide.<BR>
+            Some definitions that might be useful in context of Git<BR>
           </aside>
         </section>
 
@@ -459,6 +437,9 @@ The wikipedia page for Git<BR>
   <A Href="https://en.wikipedia.org/wiki/Git"> https://en.wikipedia.org/wiki/Git </A><BR>
 Git resoures from git-scm.com (Tutorials, Free Books, Free Videos)<BR>
   <A Href="https://git-scm.com/doc"> https://git-scm.com/doc </A><BR>
+Good Git info about using Git and orgraning your Git/Project
+  <A Href="https://git-scm.com/about"> https://git-scm.com/about </A><BR>
+
 <BR>
 <BR>
 <BR>
