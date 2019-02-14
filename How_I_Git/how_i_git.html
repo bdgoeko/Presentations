@@ -65,10 +65,10 @@
 <section>
           Why use Git ? <BR>
           <BR>
-          Git is Open Source <A Href="https://github.com/git/git"> Git's Git Repo </A><BR>
+          Git is Open Source ( <A Href="https://github.com/git/git"> Git's Git Repo </A> )<BR>
           Available client/server on Linux <BR>
           Easy to use once started<BR>
-          GitHubm<BR>
+          GitHub<BR>
           Available client for several platforms (I believe servers are also available.)<BR>
           Used by a lot of opensource projects<BR>
           <BR>
@@ -239,15 +239,8 @@ Untracked files:
 	.how_i_git.html.swp
 
 no changes added to commit (use "git add" and/or "git commit -a")
-goekol@goekol-XPS-13-9360:~/Projects/Presentations/How_I_Git$ git add how_i_git.html 
-goekol@goekol-XPS-13-9360:~/Projects/Presentations/How_I_Git$ giti status
-No command 'giti' found, did you mean:
- Command 'gitit' from package 'gitit' (universe)
- Command 'gitk' from package 'gitk' (main)
- Command 'git' from package 'git' (main)
- Command 'gitg' from package 'gitg' (universe)
-giti: command not found
-goekol@goekol-XPS-13-9360:~/Projects/Presentations/How_I_Git$ git status
+$ git add how_i_git.html 
+$ git status
 On branch how_i_get
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
@@ -270,10 +263,6 @@ Untracked files:
 	.how_i_git.html.swp
 
 nothing added to commit but untracked files present (use "git add" to track)
-$ 
-
-$ git commit  -m "My code comment here"
-$ git status
           </code></pre>
           <aside class="notes">
           </aside>
@@ -444,8 +433,10 @@ flycheck_*.el
 
 # directory configuration
 .dir-locals.el
-
+# ignore code that I choose not to distribute
 reveal.js*
+#ignore vi .swp files
+.*.swp
           </code></pre>
           <BR>Slide 4
           <aside class="notes">
