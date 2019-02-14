@@ -166,6 +166,7 @@ $ git checkout -b how_i_get
 <section>
           More work with Branch<BR>
           <BR>
+          We will switch back to the master branch.<BR>
           <pre><code>
 $ git checkout master
 M	How_I_Git/how_i_git.html
@@ -176,9 +177,6 @@ $ git branch
   how_i_get
 * master
           </code></pre><BR>
-          .<BR>
-          <BR>
-          All work you do from now on will be on this branch.<BR>
           <BR>Slide 22
           <aside class="notes">
             I have run into some big probems with branch names and plugins/intergrations. <BR>
@@ -227,6 +225,53 @@ no changes added to commit (use "git add" and/or "git commit -a")
           <BR>
           <BR>Slide 19
           <pre><code>
+$ git status
+On branch how_i_get
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   how_i_git.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.how_i_git.html.swp
+
+no changes added to commit (use "git add" and/or "git commit -a")
+goekol@goekol-XPS-13-9360:~/Projects/Presentations/How_I_Git$ git add how_i_git.html 
+goekol@goekol-XPS-13-9360:~/Projects/Presentations/How_I_Git$ giti status
+No command 'giti' found, did you mean:
+ Command 'gitit' from package 'gitit' (universe)
+ Command 'gitk' from package 'gitk' (main)
+ Command 'git' from package 'git' (main)
+ Command 'gitg' from package 'gitg' (universe)
+giti: command not found
+goekol@goekol-XPS-13-9360:~/Projects/Presentations/How_I_Git$ git status
+On branch how_i_get
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   how_i_git.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.how_i_git.html.swp
+
+$ git commit -m "newest slides"
+[how_i_get b933fb5] newest slides
+ 1 file changed, 188 insertions(+), 207 deletions(-)
+$ git status
+On branch how_i_get
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.how_i_git.html.swp
+
+nothing added to commit but untracked files present (use "git add" to track)
+$ 
+
 $ git commit  -m "My code comment here"
 $ git status
           </code></pre>
@@ -339,8 +384,63 @@ $ git status
         </section>
 
 <section>
-          BLANK SLIDE<BR>
+          Ignore some files<BR>
           <BR>
+          More than likely not every file you have in the directory is something you want to track, or checkin<BR>
+          You can use a .gitignore to tell git what files/directories you don't want to track<BR>
+          Here is the .gitignore file I am using, this one is located in the base directory of the repo.<BR>
+          You may want/need to exclude files directorys that other intergrations may generate or are are temp files.<BR>
+          Or you may want to ignore files that may have credentials.<BR>
+          <pre><code>
+$ more ../.gitignore 
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Org-mode
+.org-id-locations
+*_archive
+
+# flymake-mode
+*_flymake.*
+
+# eshell files
+/eshell/history
+/eshell/lastdir
+
+# elpa packages
+/elpa/
+
+# reftex files
+*.rel
+
+# AUCTeX auto folder
+/auto/
+
+# cask packages
+.cask/
+dist/
+
+# Flycheck
+flycheck_*.el
+
+# server auth directory
+/server/
+
+# projectiles files
+.projectile
+
+# directory configuration
+.dir-locals.el
+
+reveal.js*
+          </code></pre>
           <BR>Slide 4
           <aside class="notes">
             Blank Comments on blank slide.<BR>
