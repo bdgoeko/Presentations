@@ -35,10 +35,11 @@
 
  <section>
           whoami<br>
+          <BR>
           Brian Dolan-Goecke <br>
           Hacking Un*x for 30 year <br>
           Started in AT &amp; T SYS VR3 <BR>
-          DevOps Engineer <BR>
+          DevOps/Cloud Engineer <BR>
           <BR>Slide 29
           <aside class="notes">
           </aside>
@@ -48,6 +49,8 @@
           What is Git ? <BR>
           <BR>
           Git is a distributed Revision Control System<BR>
+          <BR>
+          A great tool for modern distributed teams working on projects.<BR>
           <BR>Slide 28
           <aside class="notes">
           </aside>
@@ -56,7 +59,7 @@
 <section>
           Where is Git from ? <BR>
           <BR>
-          Git was developed by <A Href="https://en.wikipedia.org/wiki/Linus_Torvalds"> Linux Torvalds</A> in 2005 after after many developers of the Linux kernel gave up access to <A Href="https://en.wikipedia.org/wiki/BitKeeper">BitKeeper</A>.<BR>
+          Git was developed by <A Href="https://en.wikipedia.org/wiki/Linus_Torvalds"> Linux Torvalds</A> in 2005 after many developers of the Linux kernel gave up access to <A Href="https://en.wikipedia.org/wiki/BitKeeper">BitKeeper</A>.<BR>
           <BR>Slide 27.5
           <aside class="notes">
           </aside>
@@ -78,7 +81,7 @@
         </section>
 
 <section>
-          Where have I used Git ?
+          Where have I used Git ?<BR>
           <BR>
           Work Code Development <BR>
           Work Repo's for Puppet, Ansible and other tools.<BR>
@@ -106,6 +109,7 @@
 <IMG src="How_I_Git_Workflow.png" Boarder=0>
           <BR>Slide 24
           <aside class="notes">
+            Add pull example.<BR>
           </aside>
         </section>
 
@@ -283,7 +287,7 @@ $ git commit -m "Added graphic of how I Git and added more slides"
  <section>
           Ready to Push<BR>
           <BR>
-          We have made great progress, we have good that is working.<BR>
+          We have made great progress, we have code that is working.<BR>
           We may want to add more features, or refine some parts, but we can do that later we want to make the code availbe for others to look at.<BR>
           So it is time to push the code.<BR>
           This will put the code in the branch on the server.<BR>
@@ -324,7 +328,7 @@ To https://github.com/bdgoeko/Presentations.git
  <section>
           What Next ?<BR>
           <BR>
-          We can either make more changes and go through the add/commit/push<BR>
+          We can either make more changes and go through the git add/commit/push<BR>
           or<BR>
           if we are ready we can make a PR (Poll Request ?) or Peer Review ? <BR>
           <BR>
@@ -335,6 +339,7 @@ To https://github.com/bdgoeko/Presentations.git
 
 <section>
           PR<BR>
+          <BR>
           Different Git software make PR's in different ways.<BR>
           In the past I have usually created a PR via the web interface, specifing what branch I am requesting to be merged into master and assigning peer reviewers.<BR>
           <BR>
@@ -356,35 +361,36 @@ To https://github.com/bdgoeko/Presentations.git
 <section>
           Merge Merge Merger!<BR>
           <BR>
-          
+          We will take a look on github<BR> 
           <BR>Slide 11
           <aside class="notes">
           </aside>
         </section>
 
 <section>
-	  <BR>
-	  <BR>
-	  <BR>
+          Rinse Repeat as desired.<BR>
+          <BR>
+          Hopefully you understand the basic flow of how I use Git in my development cycle.<BR>
+          <pre><code>
+$git clone
+$ git checkout -b MyNewAwesomeBranch
+Make great code
+$ git add
+$ git commit {-a} -m "I made some great code"
+$ git push origin MyNewAwesomeBranch
+Create PR
+Merge Code
+          </code></pre>
           <BR>Slide 10
-          <aside class="notes">
-          </aside>
-   	</section>
-
-<section>
-          <BR>
-          <BR>
-          <BR>Slide 7
           <aside class="notes">
           </aside>
         </section>
 
 <section>
-          BLANK SLIDE<BR>
+          Some addition note about using Git<BR>
           <BR>
-          <BR>Slide 6
+          <BR>Slide 9
           <aside class="notes">
-            Blank Comments on blank slide.<BR>
           </aside>
         </section>
 
