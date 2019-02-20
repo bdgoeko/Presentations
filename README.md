@@ -9,23 +9,25 @@ Some presentations I have or am working on.
 * Bash Lighting - Bash Tips and Tricks
 * How I GIT - How I use GIT 
 
+You can view these online at 
+  http://Brian.Goecke-Dolan.com/Presentations
 
 How to work with these presentations
 ------------------------------------
-Okay, I used reveal.js <https://github.com/hakimel/reveal.js>j for most of these presenations.  But I am not sure of the Licensing for that, so I don't inlclude it here.  The plan is to write a script that will include and set it up in the base (this directory) as a sub directory and have all presentations refer to it here... but not today (20190213). So now the presentations are either NOT reveal.js, or old config (ie you pull down reveal.js and replace the index .html with the presentation file. Or as mentioned above you pull reveal.js to the base dir and the presentation refers to it there...
+Okay, I used reveal.js <https://github.com/hakimel/reveal.js> for most of these presenations.  But I am not sure of the Licensing for that, so I don't inlclude it here.  The plan is to write a script that will include and set it up in the base (this directory) as a sub directory and have all presentations refer to it here... but not today (20190213). So now the presentations are either NOT reveal.js, or old config (ie you pull down reveal.js and replace the index .html with the presentation file. Or as mentioned above you pull reveal.js to the base dir and the presentation refers to it there...
 
 Here is the state of the presentation...
 
 * How I GIT - repointed links to ../reveal.js, my plan to setup all reveal.js presentations to this...
+* Bash Lighting - repointed links to ../reveal.js, my plan to setup all reveal.js presentations to this...
 
 * CLI-Lighting - old config, inbed the soure file in reveal.js
 * March Bashness -old config, inbed the soure file in reveal.js
-* Bash Lighting - old config, inbed the soure file in reveal.js
 * March Bashness - old config, inbed the soure file in reveal.js
 
 * Intro to Linux  - Old Old school, no just just basic HTML
 
-* SNMP - Really Really Old Old School an word perfect document ( I think...)
+* SNMP - Really Really Old Old School a WordPerfect document ( I think...)
 
 
 Thanks for looking, hope you found something useful.
