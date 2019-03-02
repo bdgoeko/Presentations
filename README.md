@@ -10,7 +10,7 @@ Some presentations I have or am working on.
 * How I GIT - How I use GIT 
 
 You can view these online at 
-  http://Brian.Goecke-Dolan.com/Presentations
+  <http://Brian.Goecke-Dolan.com/Presentations>
 
 How to work with these presentations
 ------------------------------------
