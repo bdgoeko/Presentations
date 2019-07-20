@@ -1,0 +1,624 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Building Kids Nework</title>
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/sky.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+ <section>
+          Build A Kids Network<br>
+          <br>
+          Brian Dolan-Goecke<br>
+          <br>
+          Version 0.0.0 <BR>
+          Copyright 2019 Brian Dolan-Goecke <BR>
+          <BR>Slide 30
+          <aside class="notes">
+          </aside>
+        </section>
+
+ <section>
+          whoami<br>
+          <BR>
+          Brian Dolan-Goecke <br>
+          Hacking Un*x for 30 year <br>
+          Started in AT &amp; T SYS VR3 <BR>
+          DevOps/Cloud Engineer <BR>
+          <BR>Slide 29
+          <aside class="notes">
+          </aside>
+        </section>
+
+ <section>
+          <BR>
+          <BR>
+          <BR>
+          <BR>Slide 28
+          <aside class="notes">
+          </aside>
+        </section>
+
+<section>
+          Where is Git from ? <BR>
+          <BR>
+          Git was developed by <A Href="https://en.wikipedia.org/wiki/Linus_Torvalds"> Linux Torvalds</A> in 2005 after many developers of the Linux kernel gave up access to <A Href="https://en.wikipedia.org/wiki/BitKeeper">BitKeeper</A>.<BR>
+          <BR>Slide 27.5
+          <aside class="notes">
+          </aside>
+        </section>
+
+<section>
+          Why use Git ? <BR>
+          <BR>
+          Git is Open Source ( <A Href="https://github.com/git/git"> Git's Git Repo </A> )<BR>
+          Available client/server on Linux <BR>
+          Easy to use once started<BR>
+          GitHub<BR>
+          Available client for several platforms (I believe servers are also available.)<BR>
+          Used by a lot of opensource projects<BR>
+          <BR>
+          <BR>Slide 27
+          <aside class="notes">
+          </aside>
+        </section>
+
+<section>
+          Where have I used Git ?<BR>
+          <BR>
+          Work Code Development <BR>
+          Work Repo's for Puppet, Ansible and other tools.<BR>
+          Personal project, <A Href="https://github.com/bdgoeko"> https://github.com/bdgoeko</A><BR>
+          Personal projects at home... <BR>
+          <BR> Slide 26
+          <aside class="notes">
+            Pretty much easy to use, and avaialbe everywhere..<BR>
+          </aside>
+        </section>
+
+<section>
+          How do I use Git ? <BR>
+          <IMG Src="xkcd_git_2x.png" Width=40% Title="How to use git"></IMG> <BR>
+          <A Href="https://xkcd.com/1597/"> Original XKCD comic link https://xkcd.com/1597/ </A> <BR>
+          <BR>Slide 25
+          <aside class="notes">
+           Offically this is a tech presentation it has an XKCD comic!
+          </aside>
+        </section>
+
+<section>
+          My Git work flow.<BR>
+          <BR>
+<IMG src="How_I_Git_Workflow.png" Boarder=0>
+          <BR>Slide 24
+          <aside class="notes">
+            Add pull example.<BR>
+          </aside>
+        </section>
+
+ <section>
+          Clone<BR>
+          (Copy code local)<BR>
+          <BR>
+          <pre><code>
+$ git clone https://github.com/bdgoeko/Presentations.git 
+          </code></pre><BR>
+          You can use a https or an ssh url to clone the code, you usually get this by going to repo.<BR>
+          <BR>Slide 23
+          <aside class="notes">
+            I don't believe you can copy part of a repo.<BR>
+            Not sure that would be a good idea even if you could<BR>
+            Should add screen shot that shows where they are in the UI...<BR>
+            Not as easy to find for hardcore CLI'r<BR>
+            but.. <BR>
+            For a local project, on the same machine and you have access to read (and write ?)<BR>
+            $ git clone  /srv/home/goeko/Projects/Git/experments/<BR>
+            Again for a "local" machine that you have ssh access to <BR>
+            $ git clone gituser@example.com:/opt/jupiter.git jupiter.clone<BR>
+          </aside>
+        </section>
+
+<section>
+          Branch<BR>
+          <BR>
+          <pre><code>
+$ git checkout -b how_i_get
+          </code></pre><BR>
+          This will create a branch and check it out.<BR>
+          <BR>
+          All work you do from now on will be on this branch.<BR>
+          <BR>Slide 22
+          <aside class="notes">
+            I have run into some big probems with branch names and plugins/intergrations. <BR>
+            Be sure you understand any intergrations used in your systems!<BR>
+          </aside>
+        </section>
+
+<section>
+          Digressions on branching/branches<BR>
+          <BR>
+          You may want to designate "special" branchs for important purposes. <BR>
+          ie. The Master branch is always the current production code.<BR>
+             and the "dev" branch is always the pre-Production code... <BR>
+          You can enfore this multiple ways, and depends on the server you are using.<BR>
+          <BR>
+          see <A Href="https://git-scm.com/about"> https://git-scm.com/about </A><BR>
+          <BR>
+          <BR>Slide 21
+          <aside class="notes">
+            This can be very useful.<BR>
+            If this is done it should also be well publisied.<BR>
+          </aside>
+        </section>
+
+<section>
+          More work with Branch<BR>
+          <BR>
+          We can switch to a different branch.<BR>
+          <pre><code>
+$ git checkout master
+M	How_I_Git/how_i_git.html
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+$ git branch
+  AnotherBranchToShowMultipleBranchs
+  how_i_get
+* master
+          </code></pre><BR>
+          In this case we just switched back to the master branch... we could switch to any branch.<BR>
+          Rember though you are working on that branch then any changes your add and commit will be on that branch!<BR>
+          <BR>Slide 22
+          <aside class="notes">
+            You can always use 'git status' to see what branch you are are<BR>
+            There are also ways to have your branch displayed on the prompt<BR>
+          </aside>
+        </section>
+
+<section>
+          Code Magic!<BR>
+          <BR>
+          Now you are ready to edit your code, make the magic changes that will make the World Better....<BR>
+          or at least your code base<BR>
+          <BR>
+          So make your changes, edit with your favorite editor.<BR>
+          <BR>Slide 20.5
+          <aside class="notes">
+            I use often use 'vi' sometimes even 'emacs' but I don't often use and editor that is Git aware...<BR>
+            Just a bad habit on my part.<BR>
+          <BR>
+          </aside>
+        </section>
+
+<section>
+          Look Git noticed your changes<BR>
+          <BR>
+          <pre><code>
+$ git status
+On branch how_i_get
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   how_i_git.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	How_I_Git_Workflow.png
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+          </code></pre><BR>
+          We have two files here that Git noticed changed.  On tracked, ie we already have in our repo and one not.<BR> 
+          <BR>Slide 20
+          <aside class="notes">
+            I use often use 'vi' sometimes even 'emacs' but I don't often use and editor that is Git aware...<BR>
+            Just a bad habit on my part.<BR>
+          </aside>
+        </section>
+
+<section>
+          Add files<BR>
+          <BR>
+          <pre><code>
+$ git add how_i_git.html 
+$ git add How_I_Git_Workflow.png 
+$ git status
+On branch how_i_get
+Changes to be committed:
+  (use "git reset HEAD \<file\>..." to unstage)
+
+	new file:   How_I_Git_Workflow.png
+	modified:   how_i_git.html
+          </code></pre>
+          Here both files are added to the repo.<BR>
+          <BR>Slide 19
+          <aside class="notes">
+          </aside>
+        </section>
+
+ <section>
+          Commit Changes<BR>
+          <BR>
+          These changes look good, the code is functioning we are ready to commit this code.<BR>
+          <pre><code>
+$ git commit -m "Added graphic of how I Git and added more slides"
+[how_i_get f7905ac] Added graphic of how I Git and added more slides
+ 2 files changed, 12 insertions(+), 30 deletions(-)
+ create mode 100644 How_I_Git/How_I_Git_Workflow.png
+          </code></pre>
+          You can see the files added, along with some details about the added files.<BR>
+          <BR>Slide 18
+          <aside class="notes">
+            You can use a git commit -a -m "Perfect code, as always!"
+          </aside>
+        </section>
+
+<section>
+          Code more changes<BR>
+          <BR> 
+          At this point you can continue to work and commit changes as long a you like.<BR> 
+          But all changes on *ONLY* being local stored, nothing has been "pushed" to the server.<BR> 
+          So changes could be lost if you lose your hard drive.<BR>
+          <BR>Slide 17
+          <aside class="notes">
+            How many changes, how much to push are often a personal decision.<BR>
+            but I would argue for commit and push often!<BR>
+          </aside>
+        </section>
+
+ <section>
+          Ready to Push<BR>
+          <BR>
+          We have made great progress, we have code that is working.<BR>
+          We may want to add more features, or refine some parts, but we can do that later we want to make the code availbe for others to look at.<BR>
+          So it is time to push the code.<BR>
+          This will put the code in the branch on the server.<BR>
+          <BR> Slide 16
+          <aside class="notes">
+          </aside>
+        </section>
+
+ <section>
+          Push branch<BR>
+          <BR>
+          We are going to do a "git push origin how_i_get"<BR>
+          <pre><code>
+$ git push origin how_i_get
+Username for 'https://github.com': bdgoeko
+Password for 'https://bdgoeko@github.com': 
+Counting objects: 27, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (25/25), done.
+Writing objects: 100% (27/27), 52.21 KiB | 5.80 MiB/s, done.
+Total 27 (delta 16), reused 0 (delta 0)
+remote: Resolving deltas: 100% (16/16), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'how_i_get' on GitHub by visiting:
+remote:      https://github.com/bdgoeko/Presentations/pull/new/how_i_get
+remote: 
+To https://github.com/bdgoeko/Presentations.git
+ * [new branch]      how_i_get -> how_i_get
+          </code></pre>
+          Now the 
+          <BR>Slide 15
+          <aside class="notes">
+           it is bad practice to "git push origin master"<BR>
+           with that said, working on my personal projects noone else can see or modify I do that. :( <BR>
+          </aside>
+        </section>
+
+ <section>
+          What Next ?<BR>
+          <BR>
+          We can either make more changes and go through the git add/commit/push<BR>
+          or<BR>
+          if we are ready we can make a PR (Pull Request ?) or Peer Review ? <BR>
+          <BR>
+          <BR>Slide 14
+          <aside class="notes">
+          </aside>
+        </section>
+
+<section>
+          PR<BR>
+          <BR>
+          Different Git software make PR's in different ways.<BR>
+          In the past I have usually created a PR via the web interface, specifing what branch I am requesting to be merged into master and assigning peer reviewers.<BR>
+          <BR>
+          <A Href="https://github.com/bdgoeko/Presentations/tree/how_i_get"> Branch on GitHub</A><BR>
+          <BR>Slide 13
+          <aside class="notes">
+          </aside>
+        </section>
+
+<section>
+          PR Approval<BR>
+          <BR>
+          Here again I have often used the web interface to view the changes in the code and see diffferences.<BR>
+          <BR>Slide 12
+          <aside class="notes">
+          </aside>
+        </section>
+
+<section>
+          Merge Merge Merger!<BR>
+          <BR>
+          We will take a look on github<BR> 
+          <BR>Slide 11
+          <aside class="notes">
+          </aside>
+        </section>
+
+<section>
+          Rinse Repeat as desired.<BR>
+          <BR>
+          Hopefully you understand the basic flow of how I use Git in my development cycle.<BR>
+          <pre><code>
+$git clone
+$ git checkout -b MyNewAwesomeBranch
+Make great code
+$ git add
+$ git commit {-a} -m "I made some great code"
+$ git push origin MyNewAwesomeBranch
+Create PR
+Merge Code
+          </code></pre>
+          <BR>Slide 10
+          <aside class="notes">
+          </aside>
+        </section>
+
+<section>
+          Some addition note about using Git<BR>
+          git clone -- ? for multiple repos <BR>
+          git pull .. show user of pull....<BR>
+          shallow clones<BR>
+          git reflog<BR>
+          ** Useful comments... Try to add menaingful comments.**
+          <BR>
+          <BR>Slide 9
+          <aside class="notes">
+          </aside>
+        </section>
+
+<section>
+          GitLab<BR>
+          <BR>
+          Good tool, open source?<BR>
+          <BR>Slide 9
+          <aside class="notes">
+          </aside>
+        </section>
+
+
+<section>
+          A note about changing branches<BR> 
+          <BR>
+          <pre><code>
+$ git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+	How_I_Git/how_i_git.html
+Please commit your changes or stash them before you switch branches.
+Aborting
+          </code></pre>
+          <BR>Slide 5
+          <aside class="notes">
+          </aside>
+        </section>
+
+<section>
+          Ignore some files<BR>
+          <BR>
+          More than likely not every file you have in the directory is something you want to track, or checkin<BR>
+          You can use a .gitignore to tell git what files/directories you don't want to track<BR>
+          Here is the .gitignore file I am using, this one is located in the base directory of the repo.<BR>
+          You may want/need to exclude files directorys that other intergrations may generate or are are temp files.<BR>
+          Or you may want to ignore files that may have credentials.<BR>
+          <pre><code>
+$ more ../.gitignore 
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Org-mode
+.org-id-locations
+*_archive
+
+# flymake-mode
+*_flymake.*
+
+# eshell files
+/eshell/history
+/eshell/lastdir
+
+# elpa packages
+/elpa/
+
+# reftex files
+*.rel
+
+# AUCTeX auto folder
+/auto/
+
+# cask packages
+.cask/
+dist/
+
+# Flycheck
+flycheck_*.el
+
+# server auth directory
+/server/
+
+# projectiles files
+.projectile
+
+# directory configuration
+.dir-locals.el
+# ignore code that I choose not to distribute
+reveal.js*
+#ignore vi .swp files
+.*.swp
+          </code></pre>
+          <BR>Slide 4
+          <aside class="notes">
+            Blank Comments on blank slide.<BR>
+          </aside>
+        </section>
+
+<section>
+          See what you have done!<BR>
+          <BR>
+          <pre><code>
+$ git log
+commit 010e9237517f67e1405ad2b42c640202a0f9a8d5 (HEAD -> how_i_get, origin/master, origin/HEAD, master)
+Author: Brian Dolan-Goecke <goeko@Goecke-Dolan.com>
+Date:   Wed Feb 13 22:41:17 2019 -0600
+
+    Updated notes on how to view presentations with reveal.js
+
+commit aeca3214ad5ad53c47d30a6b5fe1ebc0bae99725
+Author: Brian Dolan-Goecke <goeko@Goecke-Dolan.com>
+Date:   Wed Feb 13 22:19:40 2019 -0600
+
+    More work on How I GIT, and notes about presentations
+...
+          </code></pre>
+          There is a lot more this command can show you, see the man page :)<BR>
+          <BR>
+          <BR>Slide 3
+          <aside class="notes">
+          </aside>
+        </section>
+
+<section>
+          How to Undo a commit<BR>
+          <BR>
+          If you want to undo, remove, take away the last commit<BR>
+          What you are doing in Git is moving the HEAD pointer backwards X links back.<BR>
+          ie. undo the changes that are in the what HEAD currently points to<BR>
+          <BR>
+          This can be *VERY* messy, handle with great care... you may way to archive the the whole hierarchy<BR>
+          <BR>
+          <BR>Slide 2
+          <aside class="notes">
+            Do at you own risk!<BR>
+            Just like working with 'rm' measure a few times 'rm' only once with good backups!<BR>
+          </aside>
+        </section>
+
+<section>
+          How to revert file back to last pull<BR>
+          (ie undo those changes you did that just screwed up the file you wanted... arg.)<BR>
+          <BR>
+<pre><code>
+$ git checkout {filename} 
+</code></pre><BR>
+          <BR>
+          <BR>Slide 1
+          <aside class="notes">
+            Yea use that more that I would like to admit.<BR>
+            And of course I often copy that file out first, and the revert it... then see if that was what I really wanted to do!<BR>
+          </aside>
+        </section>
+
+<section>
+          Other useful Git commands<BR>
+          <BR>
+          $ git show remote <BR>
+          $ git checkout filename<BR>
+          $ git status <BR>
+          $ git log <BR>
+          $ git squash <BR>
+          $ git branch -d {branch_name}  <BR>
+          $   <BR>
+          <BR>
+          <BR>Slide 0
+          <aside class="notes">
+            Blank Comments on blank slide.<BR>
+          </aside>
+        </section>
+
+<section>
+          Definitions<BR>
+          <HR>
+          <BR>
+          repo - A tree of source code, short for Reposiary<BR>
+          hURL - a URL, and what A URL look like!<BR>
+          <BR>Slide Definitions <BR>
+          <aside class="notes">
+            Some definitions that might be useful in context of Git<BR>
+          </aside>
+        </section>
+
+<section>
+          Additional Resources<BR>
+The wikipedia page for Git<BR>
+  <A Href="https://en.wikipedia.org/wiki/Git"> https://en.wikipedia.org/wiki/Git </A><BR>
+Git resoures from git-scm.com (Tutorials, Free Books, Free Videos)<BR>
+  <A Href="https://git-scm.com/doc"> https://git-scm.com/doc </A><BR>
+Good Git info about using Git and orgraning your Git/Project
+  <A Href="https://git-scm.com/about"> https://git-scm.com/about </A><BR>
+
+<BR>
+<BR>
+<BR>
+          <BR> Slide Additional Resources <BR>
+          <aside class="notes">
+            Some useful resources here.
+          </aside>
+        </section>
+
+        <section>
+	  Always exit with status! <BR>
+          Brian Dolan-Goecke <BR>
+          howigit at Goecke - Dolan dot com <BR>
+          <BR>
+          <BR>Slide exit 0
+          <aside class="notes">
+	    Good Bye.
+          </aside>
+        </section>
+<!- ---- End of Slides ----- ->
+      </div>
+    </div>
+
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      history: true,
+      // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+      { src: '../reveal.js/plugin/markdown/marked.js' },
+      { src: '../reveal.js/plugin/markdown/markdown.js' },
+      { src: '../reveal.js/plugin/notes/notes.js', async: true },
+      { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+      ]
+      });
+    </script>
+  </body>
+</html>
