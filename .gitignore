@@ -44,4 +44,8 @@ flycheck_*.el
 # directory configuration
 .dir-locals.el
 
+# I do not want to redistribute reveal.js
 reveal.js*
+
+# ignore my log that syncs my public presentation web site with github
+update_git.log
