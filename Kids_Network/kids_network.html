@@ -21,7 +21,7 @@
     <div class="reveal">
       <div class="slides">
 
- <section>
+<section>
           Build A Kids Network<br>
           <br>
           Brian Dolan-Goecke<br>
@@ -33,26 +33,25 @@
           </aside>
         </section>
 
- <section>
+<section>
           whoami<br>
           <BR>
           Brian Dolan-Goecke <br>
           Hacking Un*x for 30+ year <br>
           Started in AT &amp; T SYS VR3 <BR>
           DevOps/Cloud Engineer <BR>
-          <BR>Slide 29
+          <BR> <BR>Slide 29
           <aside class="notes">
           </aside>
         </section>
 
- <section>
-          WHY ?<BR>
+<section>
+          Why ?<BR>
           <BR>
           Keeps kids safe.<BR>
           <LI>Adult Sites
           <LI>Scare Site
-	  <BR>
-          <BR>Slide 28
+	  <BR> <BR>Slide 28
           <aside class="notes">
           </aside>
         </section>
@@ -60,48 +59,69 @@
 <section>
           Other Tools<BR>
           <BR>
-          Guardian <BR>
-          Squid Reverse proxy  
-          <BR>Slide 27.5
+          <LI>Guardian <BR>
+          <LI>Custom Squid Reverse proxy magic...<BR>
+          <LI>Others
+          <BR>
+          Why not these tools ? <BR>
+          <BR>
+          <LI>Didn't want a tool I had to install anything on remote machines.<BR>
+          <LI>Didn't want to have to build and maintain.<BR> 
+          <BR> <BR>Slide 27.5
           <aside class="notes">
           </aside>
         </section>
 
 <section>
+          Why Pi-Hole<BR>
           <BR>
-          <BR>
-          <BR>Slide 27
+          <LI> Simple solution. <BR>
+          <LI> No required setup to on remote machines.<BR>
+          <LI> No required setup to on remote machines.<BR>
+          <LI> Supported <BR>
+          <LI> Built in Lists <BR>
+          <LI> Added ability to block Ads and Trackers!<BR>
+          <BR> <BR>Slide 27
           <aside class="notes">
           </aside>
         </section>
 
 <section>
-          <BR>
-          <BR> Slide 26
-          <aside class="notes">
-          </aside>
-        </section>
-
-<section>
-          <BR>
-          <IMG Src="xkcd_git_2x.png" Width=40% Title="Network"></IMG> <BR>
+          XKCD<BR>
+          <IMG Src="network.png" Width=40% Title="Network"></IMG> <BR>
           <A Href="https://xkcd.com/350/" <A> Original XKCD comic link https://xkcd.com/350/ </A> <BR>
-          <BR>Slide 25
+          <BR>Slide 26
           <aside class="notes">
            Offically this is a tech presentation it has an XKCD comic!
           </aside>
         </section>
 
 <section>
+          Installation...<BR>
           <BR>
-          <BR>Slide 24
+          Used x86 PC with Ubuntu installed<BR>
+          Installed Pi-Hole<BR>
+          Installed not-DNSMasq DHCP Server<BR>
+          Create Physical Network, different IP space (10.3.3.x)<BR>
+          Block port 53 from local network through Pi-Hole box<BR>
+          Configure route to 10.3.3.0 on internet router<BR>
+          <BR> <BR> Slide 25
+          <aside class="notes">
+          </aside>
+        </section>
+
+<section>
+          Network Diagram<BR>
+          <IMG Src="Network-diag.svg" Width=40% Title="Network Diagram"></IMG> <BR>
+          <BR>
+          <BR> <BR>Slide 24
           <aside class="notes">
           </aside>
         </section>
 
  <section>
           <BR>
-          <BR>Slide 23
+          <BR> <BR>Slide 23
           <aside class="notes">
           </aside>
         </section>
@@ -110,7 +130,7 @@
           <BR>
           <pre><code>
           </code></pre><BR>
-          <BR>
+          <BR> <BR>
           <BR>Slide 22
           <aside class="notes">
           </aside>
