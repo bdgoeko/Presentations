@@ -193,12 +193,15 @@ Slide 12
           <BR>
           Example:
           <pre><code>
- ${VAR[abc]}="whatever"
- echo "${VAR[abc]} u want"
+ VAR=( "u" "b" "whatever" )
+ echo "${VAR[2]} u want"
           </code></pre><br>
           <aside class="notes">
             http://wiki.bash-hackers.org/syntax/arrays
 	    Hummm.. Doesn't like it if start with a number.. has a base error..
+            Update 20200611.... 
+            I had this wrong.. I have updated it, but still working to get it the way I want it to work ... I will update later.
+            DO READ the web page.
           </aside>
           <br>
 Slide 11
