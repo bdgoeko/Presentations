@@ -1,4 +1,3 @@
-
 Some presentations I have or am working on.
 -------------------------------------------
 
@@ -34,9 +33,12 @@ Thanks for looking, hope you found something useful.
 --
 
 All works are 
-  Copyright 2016 - 2019 Brian Dolan-Goecke
+  Copyright 2016 - 2024 Brian Dolan-Goecke
 
 --
+
+Sun Mar 10 09:02:39 CDT 2024
+Working on new DevSecOps Presentation
 
 Wed Feb 13 22:00:56 CST 2019
 How I GIT presentation work
