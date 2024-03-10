@@ -1,0 +1,52 @@
+
+__DevSecOps_Engineering___
+
+Theme of The Good, The bad, The Ugly...
+
+The Ops
+  History of how we got here... from a computer running in a controled enviornment 
+  Rainbow of machines
+
+The Sec
+  Started just as access to the machine, avilablity of resources
+  
+
+The Dev
+
+
+_Tool Tips_
+Always make options Command Line options
+  When automating it is difficult to fill out forms/answer questions.
+Check input values
+Secrets should never be hard coded!
+  Env vars are good
+  Cli options work, but may be exposed ( could happen in logging tools, monitoring tools)
+Log, Log, LOG more! (alright so you can log too much, try to reach a happy medium)
+API's are great
+Always return a status
+O1TZ - There is only ONE timezone! 20240307T000000Z (okay two Moon time is a thing! )
+  alias timestamp="date -u +"%Y%m%dT%H%M%SZ"" 
+Name things.... 
+  be sure monitoring put a unique name on the alert
+  it is nice to make things that can be talked about... but that is a left over from days of herding... but still nice :|
+We don't test were professional!
+  Professional do test, and test and test.
+
+Automation tool...
+  choose one, and use it...
+    using an automation tool to just call bash script is not automation 
+  idempotent 
+
+
+Plan to fail and plan for failure
+  This is part of what CI/CD is about, the ability to fail and roll back
+
+  Planing to fail forward is a plan 
+    maybe not great but it is a plan
+    can be done if planned for
+
+Not all sistuations are testable.
+  There limits to resources
+  There are limits to costs
+  Do what you can, and prepare for failure
+
