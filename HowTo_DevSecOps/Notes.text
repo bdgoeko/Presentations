@@ -3,42 +3,53 @@ __DevSecOps_Engineering___
 
 Theme of The Good, The bad, The Ugly...
 
+History of DevSecOps
+
 The Ops
   History of how we got here... from a computer running in a controled enviornment 
   Rainbow of machines
+  Scale it's issue....
 
 The Sec
   Started just as access to the machine, avilablity of resources
+  Scanning source code
+  images... scanning 
   
-
 The Dev
+  Build it and they will come. or something like that... build it and they will Deploy Deploy Deploy !
 
-
-_Tool Tips_
+_DevSecOps_Tenets_
+O1TZ - There is only ONE timezone! 20240307T000000Z (okay two Moon time is a thing! )
+  alias timestamp="date -u +"%Y%m%dT%H%M%SZ"" 
 Always make options Command Line options
   When automating it is difficult to fill out forms/answer questions.
-Check input values
-Secrets should never be hard coded!
+Secrets should be Secret!
+  Secrets should never be hard coded! 
   Env vars are good
   Cli options work, but may be exposed ( could happen in logging tools, monitoring tools)
 Log, Log, LOG more! (alright so you can log too much, try to reach a happy medium)
 API's are great
 Always return a status
-O1TZ - There is only ONE timezone! 20240307T000000Z (okay two Moon time is a thing! )
-  alias timestamp="date -u +"%Y%m%dT%H%M%SZ"" 
 Name things.... 
   be sure monitoring put a unique name on the alert
   it is nice to make things that can be talked about... but that is a left over from days of herding... but still nice :|
 We don't test were professional!
   Professional do test, and test and test.
-
-Automation tool...
+Copy and Paste
+  I know this applies a lot to the cli, but copy and paste... Type-O's can be very bad...
+Automation 
   choose one, and use it...
     using an automation tool to just call bash script is not automation 
   idempotent 
+Security Scanning
+  Need to scan before deployment....
+    scan code
+    scan images
+  Done as part of the pipelines...
+  ? fixx images/known issues....  ? 
+##Check input values
 
-
-Plan to fail and plan for failure
+Plan for failure and plan to fail
   This is part of what CI/CD is about, the ability to fail and roll back
 
   Planing to fail forward is a plan 
@@ -49,4 +60,5 @@ Not all sistuations are testable.
   There limits to resources
   There are limits to costs
   Do what you can, and prepare for failure
+
 
