@@ -1,6 +1,7 @@
 Some presentations I have or am working on.
 -------------------------------------------
 
+* HowTo DevSecOps - 
 * CLI-Lighting - Presentation about some great CLI commands you may not know
 * March Bashness - Intro to Bash Programming
 * SNMP - Intro to SNMP
