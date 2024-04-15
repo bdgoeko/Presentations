@@ -1,64 +1,79 @@
 
-__DevSecOps_Engineering___
+__DevSecOps_the_Good,the_Bad,the_Ugly!__
+Abstrct:
+
+DevSecOps is an evolution of computing.  During this persentation will discuss how DevSecOps came about and why.  And then discuss some Tenants of doing good DevSecOps!
+
+I will talk about DevSecOps, starting with a brief history of how we got to DevSecOps to help explain where we are and why we are here.  Then we will dive into the Tenants of DevSecOps. Discussing 
 
 Theme of The Good, The bad, The Ugly...
 
-History of DevSecOps
+__History_of_DevSecOps__
 
-The Ops
-  History of how we got here... from a computer running in a controled enviornment 
-  Rainbow of machines
-  Scale it's issue....
+  The Ops
+    History of how we got here... from a computer running in a controled enviornment 
+    Rainbow of machines
+    Scale, yea it's a big issue!
 
-The Sec
-  Started just as access to the machine, avilablity of resources
-  Scanning source code
-  images... scanning 
+  The Sec
+    Started just as access to the machine, avilablity of resources
+    Scanning source code
+    images... scanning 
   
-The Dev
-  Build it and they will come. or something like that... build it and they will Deploy Deploy Deploy !
+  The Dev
+    Build it and they will come. or something like that... build it and they will Deploy Deploy Deploy !
 
 _DevSecOps_Tenets_
-O1TZ - There is only ONE timezone! 20240307T000000Z (okay two Moon time is a thing! )
+O1TZ - There is only ONE timezone! 20240307T000000Z (okay two Moon time is a thing! ) *Ops*
   alias timestamp="date -u +"%Y%m%dT%H%M%SZ"" 
-Always make options Command Line options
-  When automating it is difficult to fill out forms/answer questions.
-Secrets should be Secret!
+
+Secrets should be Secret! *Sec*
   Secrets should never be hard coded! 
   Env vars are good
   Cli options work, but may be exposed ( could happen in logging tools, monitoring tools)
-Log, Log, LOG more! (alright so you can log too much, try to reach a happy medium)
-API's are great
+
+Log, Log, LOG more! (alright so you can log too much, try to reach a happy medium) *Ops* *Dev*
+
+Always make options Command Line options *Dev*
+  When automating it is difficult to fill out forms/answer questions.
+
 Always return a status
-Name things.... 
+
+API's are great
+
+Name things....  *Ops*
   be sure monitoring put a unique name on the alert
   it is nice to make things that can be talked about... but that is a left over from days of herding... but still nice :|
+
 We don't test were professional!
   Professional do test, and test and test.
-Copy and Paste
-  I know this applies a lot to the cli, but copy and paste... Type-O's can be very bad...
-Automation 
-  choose one, and use it...
-    using an automation tool to just call bash script is not automation 
-  idempotent 
-Security Scanning
-  Need to scan before deployment....
-    scan code
-    scan images
-  Done as part of the pipelines...
-  ? fixx images/known issues....  ? 
-##Check input values
-
-Plan for failure and plan to fail
-  This is part of what CI/CD is about, the ability to fail and roll back
+  Plan for failure and plan to fail
+    This is part of what CI/CD is about, the ability to fail and handle it
+      Alert!!!!
+      Roll back ?
 
   Planing to fail forward is a plan 
     maybe not great but it is a plan
     can be done if planned for
 
-Not all sistuations are testable.
-  There limits to resources
-  There are limits to costs
-  Do what you can, and prepare for failure
+  Not all sistuations are testable.
+    There limits to resources
+    There are limits to costs
+    Do what you can, and prepare for failure
 
+Copy and Paste
+  I know this applies a lot to the cli, but copy and paste... Type-O's can be very bad...
+Automate Automate Automate
+  choose one, and use it...
+    using an automation tool to just call bash script is not automation 
+  idempotent 
+Security Scanning *Sec*
+  Need to scan before deployment....
+    scan code
+    scan images
+    scan all!
+  Done as part of the pipelines...
+  Leverage prebuild tools, github
+  ? fixx images/known issues....  ? 
+##Check input values
 
