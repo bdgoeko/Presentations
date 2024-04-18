@@ -24,49 +24,51 @@ __History_of_DevSecOps__
     Build it and they will come. or something like that... build it and they will Deploy Deploy Deploy !
 
 _DevSecOps_Tenets_
-O1TZ - There is only ONE timezone! 20240307T000000Z (okay two Moon time is a thing! ) *Ops*
-  alias timestamp="date -u +"%Y%m%dT%H%M%SZ"" 
 
-Secrets should be Secret! *Sec*
-  Secrets should never be hard coded! 
-  Env vars are good
-  Cli options work, but may be exposed ( could happen in logging tools, monitoring tools)
+I. Automation. Automate! Automate! Automate! *Dev* *Ops* *Sec*
+  choose one or two or more, and use it!
+    using an automation tool to just call bash script is not automation 
+  idempotent 
 
-Log, Log, LOG more! (alright so you can log too much, try to reach a happy medium) *Ops* *Dev*
+Pipelines, CI/CD (Continuous Integration and Continuous Delivery/Continuous Deployment) *Dev* *Sec* *Ops*
+  At the heart of DevSecOps
 
-Always make options Command Line options *Dev*
-  When automating it is difficult to fill out forms/answer questions.
-
-Always return a status
-
-API's are great
-
-Name things....  *Ops*
-  be sure monitoring put a unique name on the alert
-  it is nice to make things that can be talked about... but that is a left over from days of herding... but still nice :|
-
-We don't test were professional!
+II. We don't test were professional!
   Professional do test, and test and test.
   Plan for failure and plan to fail
     This is part of what CI/CD is about, the ability to fail and handle it
       Alert!!!!
       Roll back ?
-
   Planing to fail forward is a plan 
     maybe not great but it is a plan
     can be done if planned for
-
   Not all sistuations are testable.
     There limits to resources
     There are limits to costs
     Do what you can, and prepare for failure
+  Build a test library, take fails and 
 
+III. Secrets should be Secret! *Sec*
+  Secrets should never be hard coded! 
+  Env vars are good
+  Cli options work, but may be exposed ( could happen in logging tools, monitoring tools)
+
+O1TZ - There is only ONE timezone! 20240307T000000Z (okay two Moon time is a thing! ) *Ops*
+  alias timestamp="date -u +"%Y%m%dT%H%M%SZ"" 
+
+Log, Log, LOG more! (alright so you can log too much, try to reach a happy medium) *Ops* *Dev*
+
+Name things....  *Ops*
+  be sure monitoring put a unique name on the alert
+  it is nice to make things that can be talked about... but that is a left over from days of herding... but still nice :|
+
+_Tips_
 Copy and Paste
   I know this applies a lot to the cli, but copy and paste... Type-O's can be very bad...
-Automate Automate Automate
-  choose one, and use it...
-    using an automation tool to just call bash script is not automation 
-  idempotent 
+
+API's are great
+  creating and 
+
 Security Scanning *Sec*
   Need to scan before deployment....
     scan code
@@ -75,5 +77,11 @@ Security Scanning *Sec*
   Done as part of the pipelines...
   Leverage prebuild tools, github
   ? fixx images/known issues....  ? 
-##Check input values
+
+_Development Tips_
+  Always make options Command Line options *Dev*
+    When automating it is difficult to fill out forms/answer questions.
+  Check input values
+  Always return a status
+
 
