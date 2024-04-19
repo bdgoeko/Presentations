@@ -23,11 +23,15 @@ __History_of_DevSecOps__
   The Dev
     Build it and they will come. or something like that... build it and they will Deploy Deploy Deploy !
 
+** At larger scales  needs to be multiple "people"/groups working together ***
+
 _DevSecOps_Tenets_
 
 I. Automation. Automate! Automate! Automate! *Dev* *Ops* *Sec*
   choose one or two or more, and use it!
     using an automation tool to just call bash script is not automation 
+    ansible, puppet, cheif, Terraform, Clouformation and many many more
+  there is no "Golden Hammer"!
   idempotent 
 
 Pipelines, CI/CD (Continuous Integration and Continuous Delivery/Continuous Deployment) *Dev* *Sec* *Ops*
@@ -36,7 +40,7 @@ Pipelines, CI/CD (Continuous Integration and Continuous Delivery/Continuous Depl
 II. We don't test were professional!
   Professional do test, and test and test.
   Plan for failure and plan to fail
-    This is part of what CI/CD is about, the ability to fail and handle it
+    This can be part of what CI/CD is about, the ability to fail and handle it
       Alert!!!!
       Roll back ?
   Planing to fail forward is a plan 
@@ -46,12 +50,23 @@ II. We don't test were professional!
     There limits to resources
     There are limits to costs
     Do what you can, and prepare for failure
-  Build a test library, take fails and 
+  Build a test library, take fails and add to library so you have REAL cases that have caused failures
 
 III. Secrets should be Secret! *Sec*
   Secrets should never be hard coded! 
   Env vars are good
   Cli options work, but may be exposed ( could happen in logging tools, monitoring tools)
+
+IV. Development
+  Always make options Command Line options *Dev*
+    When automating it is difficult to fill out forms/answer questions.
+  Check input values
+  Always return a status
+  API's are great
+    creating and 
+
+
+Best Practes
 
 O1TZ - There is only ONE timezone! 20240307T000000Z (okay two Moon time is a thing! ) *Ops*
   alias timestamp="date -u +"%Y%m%dT%H%M%SZ"" 
@@ -62,12 +77,9 @@ Name things....  *Ops*
   be sure monitoring put a unique name on the alert
   it is nice to make things that can be talked about... but that is a left over from days of herding... but still nice :|
 
-_Tips_
 Copy and Paste
   I know this applies a lot to the cli, but copy and paste... Type-O's can be very bad...
 
-API's are great
-  creating and 
 
 Security Scanning *Sec*
   Need to scan before deployment....
@@ -77,11 +89,5 @@ Security Scanning *Sec*
   Done as part of the pipelines...
   Leverage prebuild tools, github
   ? fixx images/known issues....  ? 
-
-_Development Tips_
-  Always make options Command Line options *Dev*
-    When automating it is difficult to fill out forms/answer questions.
-  Check input values
-  Always return a status
 
 
