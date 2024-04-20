@@ -121,6 +121,7 @@ A LOT to talk about...
 
  <section>
           Automation Automate! Automate! Automate!
+            idempotent 
             Build automation 
             Start! It doesn't need to be perfect, doesn't need to be complete, just start somwhere!
           <BR>
@@ -134,6 +135,10 @@ Not all processes could be automated when we started.
 
 <section>
           We don't test we are Professionals!
+            Professionals do test... they test a lot!
+            Plan for failure, plan to fail
+         
+       
           <BR>
           <aside class="notes">
 Yes, I had a boss that said that.  Really.
@@ -143,10 +148,27 @@ Slide 11
  </section>
 
  <section>
-          Ssshhhh that is a Secret!
+          We don't test we are Professionals!
+            Not all sistuations are testable
+              There are limits to resources
+              There are limits to costs
+              Test what you can
+              Prepare for failure
           <BR>
-          <br>
 Slide 10
+          <aside class="notes">
+
+          </aside>
+ </section>
+
+ <section>
+          Ssshhhh that is a Secret!
+            Serects should never be hard coded!
+            Use a tools for Secerts, AWS Secerts, Hashicorp Vault ... more 
+            Environment variable are good choice for secerts
+            CLI options can be used, but mayb be exposed.
+          <BR>
+Slide 9
           <aside class="notes">
 Classic story of credentials in github.  :(
 
@@ -154,25 +176,12 @@ Classic story of credentials in github.  :(
  </section>
 
  <section>
-          <BR>
-          Example:
-          <pre><code>
-
-          </code></pre><br>
-          <br>
-Slide 9
-          <aside class="notes">
-
-          </aside>
- </section>
-
- <section>
+          Development
+            DevSecOps tools should take command line options (Also Env variables ? or hit API to retive secerts)
+            Check input values
+            Always return status
+            API's  !!
           <BR> 
-          Example:
-          <pre><code>
-
-          </code></pre><br>
-          <BR>
 Slide 8
           <aside class="notes">
 
@@ -180,24 +189,23 @@ Slide 8
  </section>
 
  <section>
-          <BR>
-          Example:
-          <pre><code>
-
-          </code></pre><br>
+          Best Practices
+            O1TZ - There is only one timezone 20240307T000000Z
+             okay two timezone Moon time is a thing!
           <BR>
 Slide 7
           <aside class="notes">
-
+Having to diagnose issue accross different timezone is nearly impossible
+GNU/Linux Date is a magical tool
           </aside>
  </section>
 
  <section>
-          <BR>
-          Example:
-          <pre><code>
-
-          </code></pre><br>
+          Best Practices
+            Log, Log, Log
+            Log some more...
+            You can't create logs that are not there
+            If concerned about storage condense(or remove) logs after a shorter time.. (24 hours ?)
           <BR>
 Slide 6
           <aside class="notes">
@@ -206,12 +214,9 @@ Slide 6
  </section>
 
  <section>
+          Best Practices
+            Name things
           <BR>
-          Example:
-          <pre><code>
- 
-          </code></pre><br>
-          <br>
 Slide 5
           <aside class="notes">
  
@@ -219,11 +224,9 @@ Slide 5
  </section>
 
  <section>
-          <BR>
-          Example:
-          <pre><code>
-
-          </code></pre><br>
+          Best Practice
+            Copy and Paste when you can...
+              can help allivate issues
           <BR>
 Slide 4
           <aside class="notes">
@@ -232,11 +235,6 @@ Slide 4
  </section>
 
  <section>
-          <BR>
-          Example:
-          <pre><code>
-
-          </code></pre><br>
           <BR>
 Slide 3
           <aside class="notes">
