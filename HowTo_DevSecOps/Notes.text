@@ -6,7 +6,7 @@ DevSecOps is an evolution of computing.  During this persentation will discuss h
 
 I will talk about DevSecOps, starting with a brief history of how we got to DevSecOps to help explain where we are and why we are here.  Then we will dive into the Tenants of DevSecOps. Discussing 
 
-Theme of The Good, The bad, The Ugly...
+***Need to add xkcd comic(s) ***
 
 __History_of_DevSecOps__
 
@@ -37,7 +37,10 @@ I. Automation. Automate! Automate! Automate! *Dev* *Ops* *Sec*
 Pipelines, CI/CD (Continuous Integration and Continuous Delivery/Continuous Deployment) *Dev* *Sec* *Ops*
   At the heart of DevSecOps
 
-II. We don't test were professional!
+  Automation runs by self, you running a script is not automation
+  Automat what you can, ie start, start somewhere
+
+II. We don't test were professional! Professionals
   Professional do test, and test and test.
   Plan for failure and plan to fail
     This can be part of what CI/CD is about, the ability to fail and handle it
@@ -63,7 +66,7 @@ IV. Development
   Check input values
   Always return a status
   API's are great
-    creating and 
+    creating and using
 
 
 Best Practes
