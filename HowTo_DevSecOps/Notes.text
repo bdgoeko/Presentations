@@ -1,0 +1,96 @@
+
+__DevSecOps_the_Good,the_Bad,the_Ugly!__
+Abstrct:
+
+DevSecOps is an evolution of computing.  During this persentation will discuss how DevSecOps came about and why.  And then discuss some Tenants of doing good DevSecOps!
+
+I will talk about DevSecOps, starting with a brief history of how we got to DevSecOps to help explain where we are and why we are here.  Then we will dive into the Tenants of DevSecOps. Discussing 
+
+***Need to add xkcd comic(s) ***
+
+__History_of_DevSecOps__
+
+  The Ops
+    History of how we got here... from a computer running in a controled enviornment 
+    Rainbow of machines
+    Scale, yea it's a big issue!
+
+  The Sec
+    Started just as access to the machine, avilablity of resources
+    Scanning source code
+    images... scanning 
+  
+  The Dev
+    Build it and they will come. or something like that... build it and they will Deploy Deploy Deploy !
+
+** At larger scales  needs to be multiple "people"/groups working together ***
+
+_DevSecOps_Tenets_
+
+I. Automation. Automate! Automate! Automate! *Dev* *Ops* *Sec*
+  choose one or two or more, and use it!
+    using an automation tool to just call bash script is not automation 
+    ansible, puppet, cheif, Terraform, Clouformation and many many more
+  there is no "Golden Hammer"!
+  idempotent 
+
+Pipelines, CI/CD (Continuous Integration and Continuous Delivery/Continuous Deployment) *Dev* *Sec* *Ops*
+  At the heart of DevSecOps
+
+  Automation runs by self, you running a script is not automation
+  Automat what you can, ie start, start somewhere
+
+II. We don't test were professional! Professionals
+  Professional do test, and test and test.
+  Plan for failure and plan to fail
+    This can be part of what CI/CD is about, the ability to fail and handle it
+      Alert!!!!
+      Roll back ?
+  Planing to fail forward is a plan 
+    maybe not great but it is a plan
+    can be done if planned for
+  Not all sistuations are testable.
+    There limits to resources
+    There are limits to costs
+    Do what you can, and prepare for failure
+  Build a test library, take fails and add to library so you have REAL cases that have caused failures
+
+III. Secrets should be Secret! *Sec*
+  Secrets should never be hard coded! 
+  Env vars are good
+  Cli options work, but may be exposed ( could happen in logging tools, monitoring tools)
+
+IV. Development
+  Always make options Command Line options *Dev*
+    When automating it is difficult to fill out forms/answer questions.
+  Check input values
+  Always return a status
+  API's are great
+    creating and using
+
+
+Best Practes
+
+O1TZ - There is only ONE timezone! 20240307T000000Z (okay two Moon time is a thing! ) *Ops*
+  alias timestamp="date -u +"%Y%m%dT%H%M%SZ"" 
+
+Log, Log, LOG more! (alright so you can log too much, try to reach a happy medium) *Ops* *Dev*
+
+Name things....  *Ops*
+  be sure monitoring put a unique name on the alert
+  it is nice to make things that can be talked about... but that is a left over from days of herding... but still nice :|
+
+Copy and Paste
+  I know this applies a lot to the cli, but copy and paste... Type-O's can be very bad...
+
+
+Security Scanning *Sec*
+  Need to scan before deployment....
+    scan code
+    scan images
+    scan all!
+  Done as part of the pipelines...
+  Leverage prebuild tools, github
+  ? fixx images/known issues....  ? 
+
+

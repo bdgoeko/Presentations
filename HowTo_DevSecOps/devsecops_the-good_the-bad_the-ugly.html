@@ -1,0 +1,341 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bash Tips Tricks Ignite</title>
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/sky.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+ <section>
+          DevSecOps; The Good, the Bad, the Ugly! <br>
+          <br>
+          Brian Dolan-Goecke<br>
+          <br>
+          2016 <BR>
+          Version  <BR>
+          Copyright 2016-2024 Brian Dolan-Goecke <BR>
+          <BR>
+Slide 20
+ </section>
+
+ <section>
+          whoami<br>
+          Brian Dolan-Goecke <br>
+          Hacking Un*x for 30 year <br>
+          Started hacking with AT &amp; T SYS VR3 <BR>
+          DevSecOps Engineer<br>
+          <BR>
+Slide 19
+ </section>
+
+ <section>
+          Rise of the Dev-Sec-Ops
+	  ( or History of Dev-Sec-Ops or how we got to here )
+          <BR>
+** add manditory XKCD's here **
+          <br>
+Slide 18
+        <aside class="notes">
+ 
+        <aside>
+ </section>
+
+ <section>
+          Rise of the Ops
+            the lonely PC on the desk in the office
+            the networked computer and the always on network
+            the cloud
+            a million machines hosting yours apps
+          <BR>
+Slide 17
+        <aside class="notes">
+ 
+        <aside>
+ </section>
+
+ <section>
+          Rise of the Sec
+            
+            a million script kiddies attacking your PC
+            the cloud
+            you can't DevOps with Sec in this day
+
+          <BR>
+Slide 16
+        <aside class="notes">
+ 
+        <aside>
+ </section>
+
+ <section>
+          The Dev
+          <BR>
+Slide 15
+          <aside class="notes">
+
+          </aside>
+ </section>
+
+ <section>
+          DevSecOps Tenets
+            Automation Automate! Automate! Automate!
+            We don't test we are Professionals!
+            Ssshhhh that is a Secret!
+            Development
+          <BR>
+Slide 14
+          <aside class="notes">
+
+          </aside>
+ </section>
+
+ <section>
+          Automation Automate! Automate! Automate!
+            Choose an automation tool...
+            Many to choose from; Ansible, Terraform, Cloudformation, and many more...
+            Choose a couple automation tools!
+            Different tools have capabilities and strengths
+            Choose as many as you need to get your automation done!
+            There is no Golden Hammer!
+          <BR>
+Slide 13
+          <aside class="notes">
+Plan to do a presentation on Automation...
+A LOT to talk about...
+          </aside>
+ </section>
+
+ <section>
+          Automation Automate! Automate! Automate!
+            idempotent 
+            Build automation 
+            Start! It doesn't need to be perfect, doesn't need to be complete, just start somwhere!
+          <BR>
+Slide 12
+          <aside class="notes">
+I have heard of running automation every minute to keep a machine in a "good" state.. Ugly, but does work.
+I worked on a project to automate a process with 57 steps, needless to say we didn't get it all done at once.
+Not all processes could be automated when we started.
+          </aside>
+ </section>
+
+<section>
+          We don't test we are Professionals!
+            Professionals do test... they test a lot!
+            Plan for failure, plan to fail
+         
+       
+          <BR>
+          <aside class="notes">
+Yes, I had a boss that said that.  Really.
+          </aside>
+          <BR>
+Slide 11
+ </section>
+
+ <section>
+          We don't test we are Professionals!
+            Not all sistuations are testable
+              There are limits to resources
+              There are limits to costs
+              Test what you can
+              Prepare for failure
+          <BR>
+Slide 10
+          <aside class="notes">
+
+          </aside>
+ </section>
+
+ <section>
+          Ssshhhh that is a Secret!
+            Serects should never be hard coded!
+            Use a tools for Secerts, AWS Secerts, Hashicorp Vault ... more 
+            Environment variable are good choice for secerts
+            CLI options can be used, but mayb be exposed.
+          <BR>
+Slide 9
+          <aside class="notes">
+Classic story of credentials in github.  :(
+
+          </aside>
+ </section>
+
+ <section>
+          Development
+            DevSecOps tools should take command line options (Also Env variables ? or hit API to retive secerts)
+            Check input values
+            Always return status
+            API's  !!
+          <BR> 
+Slide 8
+          <aside class="notes">
+
+          </aside>
+ </section>
+
+ <section>
+          Best Practices
+            O1TZ - There is only one timezone 20240307T000000Z
+             okay two timezone Moon time is a thing!
+          <BR>
+Slide 7
+          <aside class="notes">
+Having to diagnose issue accross different timezone is nearly impossible
+GNU/Linux Date is a magical tool
+          </aside>
+ </section>
+
+ <section>
+          Best Practices
+            Log, Log, Log
+            Log some more...
+            You can't create logs that are not there
+            If concerned about storage condense(or remove) logs after a shorter time.. (24 hours ?)
+          <BR>
+Slide 6
+          <aside class="notes">
+ 
+          </aside>
+ </section>
+
+ <section>
+          Best Practices
+            Name things
+          <BR>
+Slide 5
+          <aside class="notes">
+ 
+          </aside>
+ </section>
+
+ <section>
+          Best Practice
+            Copy and Paste when you can...
+              can help allivate issues
+          <BR>
+Slide 4
+          <aside class="notes">
+
+          </aside>
+ </section>
+
+ <section>
+          <BR>
+Slide 3
+          <aside class="notes">
+
+          </aside>
+ </section>
+
+ <section>
+          <BR>
+          Example:
+          <pre><code>
+
+          </code></pre><br>
+          <aside class="notes">
+
+          </aside>
+          <br>
+Slide 2
+          <aside class="notes">
+
+          </aside>
+ </section>
+
+ <section>
+          <BR>
+          Example:
+          <pre><code>
+
+          </code></pre><br>
+          <aside class="notes">
+ 
+          </aside>
+          <br>
+Slide 1
+          <aside class="notes">
+          </aside>
+ </section>
+
+ <section>
+        THANK YOU!
+        Special Thanks to
+          Noel
+          Nick 
+          Travis
+	<BR>
+          <br>
+Slide 0
+        <aside class="notes">
+
+        </aside>
+ </section>
+
+ <section>
+          Thanks! <BR>
+          You can contact me here, now.<BR>
+          <BR>
+          DevSecOps@Goecke-Dolan.com<BR>
+** insert QRCode for **
+https://github.com/bdgoeko/Presentations
+          <br>
+Slide 00
+          <aside class="notes">
+            Think that sums it up!
+          </aside>
+ </section>
+
+ <section>
+          Additional Resources<BR>
+          Ansible Meetup
+          <br>
+Slide 000
+          <aside class="notes">
+          </aside>
+ </section>
+
+ <section>
+	  Always exit with status!
+          <br>
+exit 0
+          <aside class="notes">
+	    Good Bye.
+          </aside>
+        </section>
+      </div>
+    </div>
+
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      history: true,
+      // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+      { src: '../reveal.js/plugin/markdown/marked.js' },
+      { src: '../reveal.js/plugin/markdown/markdown.js' },
+      { src: '../reveal.js/plugin/notes/notes.js', async: true },
+      { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+      ]
+      });
+    </script>
+  </body>
+</html>
