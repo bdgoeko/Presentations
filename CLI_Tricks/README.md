@@ -22,3 +22,25 @@ GNU read has a timeout option ( -t {seconds to wait} )
 
 
 
+VI - OMG
+
+# Turn on paste mode, so vi stops all the stupid "helper" crap that screws up pasting... or generally using vi.. ARG.
+: set paste
+
+
+## Notes
+Arrays...
+http://wiki.bash-hackers.org/syntax/arrays
+
+
+http://guide.bash.academy/02.commands.html
+
+
+Add 'type' command.
+
+## Its trap!
+Bash Traps
+http://redsymbol.net/articles/bash-exit-traps/
+
+
+
